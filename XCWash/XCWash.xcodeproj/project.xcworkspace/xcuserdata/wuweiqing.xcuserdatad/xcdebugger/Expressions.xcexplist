@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__50+[XCDataManage loginWithBlock:userPhone:valiCode:]_block_invoke:XCDataManage.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[XCUserModel shareInstance]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[XCWashPriceDetailViewController initTopViewAndScrollView]:XCWashPriceDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[XCWashPriceDetailViewController tableView:numberOfRowsInSection:]:XCWashPriceDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SVRootScrollView loadData]:SVRootScrollView.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

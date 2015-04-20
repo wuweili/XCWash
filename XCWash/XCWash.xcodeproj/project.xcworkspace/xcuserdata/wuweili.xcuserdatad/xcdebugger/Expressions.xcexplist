@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__69+[XCDataManage updateUserInfoWithNickName:headImageUrlStr:withBlock:]_block_invoke:XCDataManage.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[XCUserModel shareInstance]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
