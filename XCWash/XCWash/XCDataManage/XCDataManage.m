@@ -343,8 +343,23 @@ static XCDataManage *av;
         }
         else
         {
-            NSString *retCode = [response valueForKeyPath:@"resultCode"];
-            NSString *retmessage = [response valueForKeyPath:@"message"];
+            NSHTTPURLResponse *httpRespone = (NSHTTPURLResponse *)response;
+            NSDictionary *headDic = [httpRespone allHeaderFields];
+            
+            NSString *retCode = [NSString stringWithFormat:@"%d",httpRespone.statusCode];
+            NSString *retmessage;
+            
+            if ([retCode isEqualToString:@"200"])
+            {
+                retmessage = @"下载成功";
+            }
+            else
+            {
+                retmessage = @"下载失败";
+
+            }
+            
+
             
             if (block)
             {

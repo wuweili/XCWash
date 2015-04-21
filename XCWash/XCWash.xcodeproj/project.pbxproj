@@ -73,7 +73,6 @@
 		0259F9D11ABF22B3006FAB12 /* order_listening_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0259F9CD1ABF22B3006FAB12 /* order_listening_image@3x.png */; };
 		027C65151AB08BC200B5C58C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C65141AB08BC200B5C58C /* main.m */; };
 		027C65181AB08BC200B5C58C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C65171AB08BC200B5C58C /* AppDelegate.m */; };
-		027C651B1AB08BC200B5C58C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C651A1AB08BC200B5C58C /* ViewController.m */; };
 		027C651E1AB08BC200B5C58C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027C651C1AB08BC200B5C58C /* Main.storyboard */; };
 		027C65201AB08BC200B5C58C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027C651F1AB08BC200B5C58C /* Images.xcassets */; };
 		027C65231AB08BC200B5C58C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027C65211AB08BC200B5C58C /* LaunchScreen.xib */; };
@@ -279,8 +278,6 @@
 		027C65141AB08BC200B5C58C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		027C65161AB08BC200B5C58C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		027C65171AB08BC200B5C58C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		027C65191AB08BC200B5C58C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		027C651A1AB08BC200B5C58C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		027C651D1AB08BC200B5C58C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		027C651F1AB08BC200B5C58C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		027C65221AB08BC200B5C58C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -598,8 +595,6 @@
 				02DF5A661AB0AB1000DE3791 /* Controller */,
 				027C65161AB08BC200B5C58C /* AppDelegate.h */,
 				027C65171AB08BC200B5C58C /* AppDelegate.m */,
-				027C65191AB08BC200B5C58C /* ViewController.h */,
-				027C651A1AB08BC200B5C58C /* ViewController.m */,
 				027C651C1AB08BC200B5C58C /* Main.storyboard */,
 				027C651F1AB08BC200B5C58C /* Images.xcassets */,
 				027C65211AB08BC200B5C58C /* LaunchScreen.xib */,
@@ -1130,7 +1125,6 @@
 				02EF87961AB9C8BA00F56FD8 /* XCServiceContentViewController.m in Sources */,
 				027C658A1AB09DB800B5C58C /* UIButton+Avatar.m in Sources */,
 				027C657B1AB09C9800B5C58C /* AFURLSessionManager.m in Sources */,
-				027C651B1AB08BC200B5C58C /* ViewController.m in Sources */,
 				027C65761AB09C9800B5C58C /* AFNetworkReachabilityManager.m in Sources */,
 				02849D221ACC4BC7001DC00D /* UIView+SDExtension.m in Sources */,
 				02849D1B1ACC4BC7001DC00D /* NSData+SDDataCache.m in Sources */,

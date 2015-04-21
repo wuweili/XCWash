@@ -10,6 +10,7 @@
 #import "XCMyOrderTableViewCell.h"
 #import "XCDataManage.h"
 #import "HXAlertView.h"
+#import "DocumentUtil.h"
 
 
 @interface XCMyOrderViewController ()<UITableViewDataSource,UITableViewDelegate,XCMyOrderTableViewCellDelegate,UIAlertViewDelegate,AVAudioPlayerDelegate>
@@ -302,7 +303,11 @@
                 return;
             }
             
-            AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL:filePath error:nil];
+            
+            BOOL isExit;
+            NSString *recordFileUrlStr = [DocumentUtil getRecordFileByRecordFileId:model.orderId isExist:&isExit];
+            
+            AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:recordFileUrlStr] error:nil];
             self.avPlay = player;
             self.avPlay.delegate = self;
             [self.avPlay play];
