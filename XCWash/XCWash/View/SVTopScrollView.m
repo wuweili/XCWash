@@ -71,6 +71,10 @@
         button.titleLabel.font = [UIFont systemFontOfSize:16.0];
         [button setTitleColor:UIColorFromRGB(0x666666) forState:UIControlStateNormal];
         [button setTitleColor:UIColorFromRGB(0x1190d9) forState:UIControlStateSelected];
+        
+//        [button setBackgroundImage:[UIImage imageNamed:@"select_bg.png"] forState:UIControlStateSelected];
+
+        
         [button addTarget:self action:@selector(selectNameButton:) forControlEvents:UIControlEventTouchUpInside];
         
         int buttonWidth = [title sizeWithFont:button.titleLabel.font
@@ -99,7 +103,8 @@
     self.contentSize = CGSizeMake(xPos, 44);
     
     shadowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(BUTTONGAP, 0, [[_buttonWithArray objectAtIndex:0] floatValue], 44)];
-    [shadowImageView setImage:[UIImage imageNamed:@"red_line_and_shadow.png"]];
+//    [shadowImageView setImage:[UIImage imageNamed:@"select_bg.png"]];
+    [shadowImageView setBackgroundColor:[UIColor clearColor]];
     [self addSubview:shadowImageView];
 }
 
