@@ -284,37 +284,61 @@
 {
     _clickOrderModel = model;
     
-    [[XCDataManage shareSIPDataManager] downRecieveFileWithFileUrlStr:model.listenFileUrl fileId:model.orderId withBlock:^(NSString *retCode, NSString *retMessage, NSURL *filePath, NSError *error) {
+    BOOL isExit;
+    NSString *recordFileUrlStr = [DocumentUtil getRecordFileByRecordFileId:model.orderId isExist:&isExit];
+    
+    if (isExit)
+    {
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        //默认情况下扬声器播放
+        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [audioSession setActive:YES error:nil];
         
-        if (error)
-        {
-            
+        if (self.avPlay.playing) {
+            [self.avPlay stop];
+            return;
         }
-        else
-        {
+
+        AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:recordFileUrlStr] error:nil];
+        self.avPlay = player;
+        self.avPlay.delegate = self;
+        [self.avPlay play];
+    }
+    else
+    {
+        [[XCDataManage shareSIPDataManager] downRecieveFileWithFileUrlStr:model.listenFileUrl fileId:model.orderId withBlock:^(NSString *retCode, NSString *retMessage, NSURL *filePath, NSError *error) {
             
-            AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-            //默认情况下扬声器播放
-            [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
-            [audioSession setActive:YES error:nil];
-            
-            if (self.avPlay.playing) {
-                [self.avPlay stop];
-                return;
+            if (error)
+            {
+                
+            }
+            else
+            {
+                
+                AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+                //默认情况下扬声器播放
+                [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+                [audioSession setActive:YES error:nil];
+                
+                if (self.avPlay.playing)
+                {
+                    [self.avPlay stop];
+                    return;
+                }
+                
+                AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL:filePath error:nil];
+                self.avPlay = player;
+                self.avPlay.delegate = self;
+                [self.avPlay play];
             }
             
             
-            BOOL isExit;
-            NSString *recordFileUrlStr = [DocumentUtil getRecordFileByRecordFileId:model.orderId isExist:&isExit];
-            
-            AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:recordFileUrlStr] error:nil];
-            self.avPlay = player;
-            self.avPlay.delegate = self;
-            [self.avPlay play];
-        }
-        
-        
-    }];
+        }];
+
+    }
+    
+    
+    
     
    
 }

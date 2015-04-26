@@ -38,18 +38,18 @@
 {
     _dataArray = [NSMutableArray arrayWithCapacity:0];
     
-    XCMessageModel*model1 = [[XCMessageModel alloc]init];
-    model1.m_id = @"01";
-    model1.m_content = @"恭喜您注册成功，送您一张10元代金券，可以直接抵免起步价，限本周使用";
-    model1.lr_sj = @"2015-02-26 15:23:00";
-    
-    [_dataArray addObject:model1];
-    
-    XCMessageModel*model2 = [[XCMessageModel alloc]init];
-    model2.m_id = @"02";
-    model2.m_content = @"欢迎您使用本客户端";
-    model2.lr_sj = @"2015-03-26 15:23:00";
-    [_dataArray addObject:model2];
+//    XCMessageModel*model1 = [[XCMessageModel alloc]init];
+//    model1.m_id = @"01";
+//    model1.m_content = @"恭喜您注册成功，送您一张10元代金券，可以直接抵免起步价，限本周使用";
+//    model1.lr_sj = @"2015-02-26 15:23:00";
+//    
+//    [_dataArray addObject:model1];
+//    
+//    XCMessageModel*model2 = [[XCMessageModel alloc]init];
+//    model2.m_id = @"02";
+//    model2.m_content = @"欢迎您使用本客户端";
+//    model2.lr_sj = @"2015-03-26 15:23:00";
+//    [_dataArray addObject:model2];
     
     
     

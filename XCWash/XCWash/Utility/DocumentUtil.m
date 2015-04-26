@@ -339,7 +339,7 @@
 +(NSString *)getRecordFileByRecordFileId:(NSString *)recordFileId isExist:(BOOL *)isExist
 {
     NSString *filename = [DocumentUtil createDocNameWithExtension:@"aac" withrecordFileId:recordFileId];
-    
+    NSString *filepath = [DocumentUtil pathForRecordFile:filename userId:recordFileId];
     NSString *stringPath = [NSString stringWithFormat:@"%@",RECORD_FILE];
     
     NSString *userPath = [IMUnitsMethods userFilePath];

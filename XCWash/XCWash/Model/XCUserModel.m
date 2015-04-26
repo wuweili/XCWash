@@ -25,6 +25,17 @@ static XCUserModel *instance = nil;
         
         _userTelphoneNum = @"";
         
+        _u_address = @"";
+        
+        _u_email = @"";
+        
+        _u_get_message = @"";
+        
+        _u_integral = @"0";
+        
+        _u_qq = @"";
+        
+        
     }
     return self;
 }
