@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "__69+[XCDataManage updateUserInfoWithNickName:headImageUrlStr:withBlock:]_block_invoke:XCDataManage.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[XCUserModel shareInstance]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "__50+[XCDataManage loginWithBlock:userPhone:valiCode:]_block_invoke:XCDataManage.m">
          <PersistentStrings>
             <PersistentString
@@ -15,6 +23,9 @@
       </ContextState>
       <ContextState
          contextName = "-[XCWashPriceDetailViewController tableView:numberOfRowsInSection:]:XCWashPriceDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[XCBaseDataManage baseStartRequestWithPath:parmDic:withBlock:]:XCDataManage.m">
       </ContextState>
       <ContextState
          contextName = "-[SVRootScrollView loadData]:SVRootScrollView.m">

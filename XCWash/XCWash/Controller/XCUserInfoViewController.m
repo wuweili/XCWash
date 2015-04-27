@@ -461,6 +461,14 @@
 {
     [XCDataManage updateUserInfoWithNickName:_nickName headImageUrlStr:_userPhotoUrlStr withBlock:^(NSString *retcode, NSString *retmessage, NSError *error) {
         
+        [[NSUserDefaults standardUserDefaults] setObject:[XCUserModel shareInstance].userName forKey:LOGIN_SUCCESS_USER_NAME];
+        [[NSUserDefaults standardUserDefaults] setObject:[XCUserModel shareInstance].userPictureUrl forKey:LOGIN_SUCCESS_USER_URL];
+        
+        
+        [[NSUserDefaults standardUserDefaults]synchronize];
+
+        
+
         [[NSNotificationCenter defaultCenter] postNotificationName:Notify_update_info_success object:nil];
         
         

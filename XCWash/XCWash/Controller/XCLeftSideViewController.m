@@ -15,6 +15,7 @@
 #import "XCMessageCenterViewController.h"
 #import "XCAboutMeViewController.h"
 #import "XCMyOrderViewController.h"
+#import "XCSerciveProvisionViewController.h"
 
 @interface XCLeftSideViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
 {
@@ -329,6 +330,14 @@
 
 -(void)clickTipButton
 {
+    XCSerciveProvisionViewController *serviceMVC = [[XCSerciveProvisionViewController alloc]init];
+    UINavigationController *addressNav = [[UINavigationController alloc]initWithRootViewController:serviceMVC];
+    
+    addressNav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.navigationController presentViewController:addressNav animated:YES completion:^{
+        
+    }];
+
     
 }
 

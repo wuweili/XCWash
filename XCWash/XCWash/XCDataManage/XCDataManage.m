@@ -31,11 +31,30 @@
         return;
     }
     
-     DDLogInfo(@"send  path = %@  data = %@",path,paramDic);
+
+    NSMutableDictionary *senderDic = [NSMutableDictionary dictionary];
+    if (paramDic && [paramDic count]>0)
+    {
+        for (id key in paramDic.allKeys)
+        {
+            NSString *keyValue = [paramDic objectForKey:key];
+            
+            
+            NSString *keyValueEncode = [keyValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            
+            
+            [senderDic setValue:keyValueEncode forKey:key];
+        }
+    }
+    
+    
+    
+    
+     DDLogInfo(@"send  path = %@  data = %@",path,senderDic);
     
     AFHTTPRequestOperationManager *manage = [AFHTTPRequestOperationManager manager];
 
-    [manage GET:path parameters:paramDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manage GET:path parameters:senderDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *retCode = [NSString stringWithFormat:@"%@",[responseObject valueForKeyPath:HTTP_CODE]];
         
         NSString *retMessage = [NSString stringWithFormat:@"%@",[responseObject valueForKeyPath:HTTP_MESSAGE]];
@@ -104,13 +123,26 @@
     
     DDLogInfo(@"send request data : %@",paramDic);
     
+    NSMutableDictionary *senderDic = [NSMutableDictionary dictionary];
+    if (paramDic && [paramDic count]>0)
+    {
+        for (id key in paramDic.allKeys)
+        {
+            NSString *keyValue = [paramDic objectForKey:key];
+            
+            NSString *keyValueEncode = [keyValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            
+            
+            [senderDic setValue:keyValueEncode forKey:key];
+        }
+    }
     
     AFHTTPRequestOperationManager *manage = [AFHTTPRequestOperationManager manager];
     
     manage.securityPolicy.allowInvalidCertificates = YES;
     
     
-    [manage POST:path parameters:paramDic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [manage POST:path parameters:senderDic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
 
         for (NSInteger i = 0;i<[imageFile count];i++)
@@ -176,13 +208,27 @@
     
     DDLogInfo(@"send request data : %@",paramDic);
     
+    NSMutableDictionary *senderDic = [NSMutableDictionary dictionary];
+    if (paramDic && [paramDic count]>0)
+    {
+        for (id key in paramDic.allKeys)
+        {
+            NSString *keyValue = [paramDic objectForKey:key];
+            
+            NSString *keyValueEncode = [keyValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            
+            
+            [senderDic setValue:keyValueEncode forKey:key];
+        }
+    }
+
     
     AFHTTPRequestOperationManager *manage = [AFHTTPRequestOperationManager manager];
     
     manage.securityPolicy.allowInvalidCertificates = YES;
     
     
-    [manage POST:path parameters:paramDic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [manage POST:path parameters:senderDic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
         
         for (NSInteger i = 0;i<[filePathArray count];i++)
@@ -708,8 +754,18 @@ static XCDataManage *av;
 {
     
     NSString *path = [NSString stringWithFormat:@"%@%@",HX_HTTP_SERVER,API_Update_UserInfo];
+    NSDictionary *dataDic ;
     
-    NSDictionary *dataDic = @{@"u_id":[XCUserModel shareInstance].userId,@"u_nickname":nickName,@"u_photo":photoUrlStr};
+    if ([NSString isBlankString:photoUrlStr])
+    {
+        dataDic = @{@"u_id":[XCUserModel shareInstance].userId,@"u_nickname":nickName};
+    }
+    else
+    {
+        dataDic = @{@"u_id":[XCUserModel shareInstance].userId,@"u_nickname":nickName,@"u_photo":photoUrlStr};
+    }
+    
+    
     
     [XCBaseDataManage baseStartRequestWithPath:path parmDic:dataDic withBlock:^(NSString *retCode, NSString *retMessage, id responseObject, NSError *error) {
         

@@ -17,7 +17,7 @@
 
 
 
-@interface XCBaseCenterViewController ()
+@interface XCBaseCenterViewController ()<UIGestureRecognizerDelegate>
 {
     MBProgressHUD *_progressHUD;
     NSTimer * _xmppTimer;
@@ -35,6 +35,10 @@
 
     [self setupLeftMenuButton];
     
+    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+    tap.delegate = self;
+    [self.view addGestureRecognizer:tap];
+
     
     // Do any additional setup after loading the view.
 }
@@ -99,6 +103,39 @@
 {
     
 }
+
+
+#pragma mark tap action
+-(void)tapAction:(id)sender
+{
+    [self.view endEditing:YES];
+    
+}
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if (![touch.view isKindOfClass:[UITextField class]] &&
+        ![touch.view isKindOfClass:[UITextView class]] &&
+        ![touch.view isKindOfClass:[UIButton class]] 
+        )
+    {
+        [self.view endEditing:YES];
+    }
+    return NO;
+}
+
+
+-(void)hideKeyBoardShow
+{
+    //私有api关闭键盘方法
+    /*
+     Class UIKeyboardImpl = NSClassFromString(@"UIKeyboardImpl");
+     id activeInstance = [UIKeyboardImpl performSelector:@selector(activeInstance)];
+     [activeInstance performSelector:@selector(dismissKeyboard)];
+     */
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+}
+
 
 #pragma mark - MBHUDProgress and NSTime
 -(void)initMBHudWithTitle:(NSString *)title
