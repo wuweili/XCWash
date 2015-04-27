@@ -103,7 +103,7 @@
     self.contentSize = CGSizeMake(xPos, 44);
     
     shadowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(BUTTONGAP, 0, [[_buttonWithArray objectAtIndex:0] floatValue], 44)];
-//    [shadowImageView setImage:[UIImage imageNamed:@"select_bg.png"]];
+    [shadowImageView setImage:[UIImage imageNamed:@"select_bg.png"]];
     [shadowImageView setBackgroundColor:[UIColor clearColor]];
     [self addSubview:shadowImageView];
 }
