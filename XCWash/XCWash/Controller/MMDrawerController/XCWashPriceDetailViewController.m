@@ -460,6 +460,7 @@
             
             [self loadDataWithTag:index];
             
+            
         }
         else
         {
@@ -725,8 +726,11 @@
         return;
     }
     
+    [_dataArray removeAllObjects];
     
     [self obtainGoodsListWithClickTypeIndex:clickIndex];
+
+    
     
     [_rootScrollView setContentOffset:CGPointMake((tag-100)*320, 0) animated:YES];
     
@@ -738,10 +742,22 @@
 
 -(void)adjustTopScrollViewButtonWithScrollViewSelectedChannelID:(NSInteger)tag
 {
+    [_dataArray removeAllObjects];
+
     [_topScrollView setButtonUnSelect];
     _topScrollView.scrollViewSelectedChannelID = tag;
     [_topScrollView setButtonSelect];
     [_topScrollView setScrollViewContentOffset];
+    
+    NSInteger clickIndex = tag - 100;
+    if (clickIndex > [_goodTypeArray count])
+    {
+        return;
+    }
+
+    
+    [self obtainGoodsListWithClickTypeIndex:clickIndex];
+
 
 }
 
@@ -752,7 +768,7 @@
     
     
     //刷新数据 接口
-    
+
 }
 
 

@@ -13,7 +13,7 @@
 #import "DocumentUtil.h"
 #import "DateFormate.h"
 
-@interface XCMakeYuYinOrderViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,AVAudioPlayerDelegate>
+@interface XCMakeYuYinOrderViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,AVAudioPlayerDelegate,UIAlertViewDelegate>
 {
     UIView *_footView;
 
@@ -69,10 +69,17 @@
     UIButton *playRecordButton = [[UIButton alloc]initWithFrame:CGRectMake((kMainScreenWidth-175)/2, 0, 175, 175)];
     playRecordButton.layer.cornerRadius = 4;
     [playRecordButton setBackgroundImage:XC_XCYuyin_Listen_image forState:UIControlStateNormal];
+    [playRecordButton setBackgroundColor:[UIColor clearColor]];
     
     [playRecordButton addTarget:self action:@selector(clickPlayRecordButton) forControlEvents:UIControlEventTouchUpInside];
     [_recordHeadView addSubview:playRecordButton];
     
+    
+    UIButton *deleteBtn = [[UIButton alloc]initWithFrame:CGRectMake(playRecordButton.frame.size.width-31, 0, 31, 31)];
+    deleteBtn.layer.cornerRadius = deleteBtn.frame.size.width/2;
+    [deleteBtn setBackgroundColor:[UIColor clearColor]];
+    [deleteBtn addTarget:self action:@selector(clickDeleteButton) forControlEvents:UIControlEventTouchUpInside];
+    [playRecordButton addSubview:deleteBtn];
     
     
     
@@ -569,6 +576,30 @@
     NSLog(@"播放失败   = %@",error);
 
 }
+
+#pragma mark - 删除- 
+-(void)clickDeleteButton
+{
+    NSLog(@"点击删除");
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提醒" message:@"确定要删除录音文件么？小哥将无法得知你的需求以及取件时间，这将导致需要重新下单" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+    
+    
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == alertView.cancelButtonIndex)
+    {
+        
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
