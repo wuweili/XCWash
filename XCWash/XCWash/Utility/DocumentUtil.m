@@ -278,7 +278,7 @@
     return [NSString stringWithFormat:@"%@.%@",userId,extension];
 }
 
-//保存患者头像
+//
 +(NSString *)saveGoodsAvatar:(UIImage *)image withGoodsId:(NSString *)userId
 {
     NSString *filename = [DocumentUtil createDocNameWithExtension:@"jpeg"  withGoodsId:userId];
@@ -351,6 +351,58 @@
     }
     return fliePath;
 }
+
+#pragma mark - 详情衣服图片 -
+
+
++(NSString *)pathForDetailClothesAvatar:(NSString *)docName clothesPhotoId:(NSString *)photoId
+{
+    NSString *stringPath = [NSString stringWithFormat:@"%@",WASH_ORDER_DETAIL_FILE];
+    
+    return [DocumentUtil pathForFolder:stringPath docName:docName];
+    
+}
+
++ (NSString *)createDocNameWithExtension:(NSString *)extension withClothesPhotoId:(NSString *)photoId
+{
+    
+    return [NSString stringWithFormat:@"%@.%@",photoId,extension];
+}
+
+//
++(NSString *)saveClothesAvatar:(UIImage *)image withClothesPhotoId:(NSString *)photoId
+{
+    NSString *filename = [DocumentUtil createDocNameWithExtension:@"jpeg"  withClothesPhotoId:photoId];
+    
+    NSString *filepath = [DocumentUtil pathForDetailClothesAvatar:filename clothesPhotoId:photoId];
+    [DocumentUtil saveImage:image
+          compressionLimite:THUMBNAIL_COMPRESS_LIMIT
+               resizeLimite:THUMBNAIL_RESIZE_LIMIT
+                   savePath:filepath];
+    return filepath;
+}
+
+//
++(NSString *)getDetailClothesAvatarByClothesPhotoId:(NSString *)photoId isExist:(BOOL *)isExist
+{
+    NSString *filename = [DocumentUtil createDocNameWithExtension:@"jpeg"  withClothesPhotoId:photoId];
+    
+    NSString *stringPath = [NSString stringWithFormat:@"%@",WASH_ORDER_DETAIL_FILE];
+    
+    NSString *userPath = [IMUnitsMethods userFilePath];
+    NSString *folderPath = [userPath stringByAppendingPathComponent:stringPath];
+    NSString *fliePath = [folderPath stringByAppendingPathComponent:filename];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (isExist) {
+        *isExist = [fileManager fileExistsAtPath:fliePath];
+    }
+    return fliePath;
+}
+
+
+
+
+
 
 
 // 计算图片的实际大小位图大小

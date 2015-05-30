@@ -851,11 +851,15 @@ static XCDataManage *av;
             }
             
         }
-        
-        if (block)
+        else
         {
-            block(nil,retCode,retMessage,error);
+            if (block)
+            {
+                block(nil,retCode,retMessage,error);
+            }
+
         }
+        
         
         
     }];
@@ -1104,6 +1108,235 @@ static XCDataManage *av;
     }];
 
 }
+
++(void)cancleOrderWithBlock:(void (^)(NSString *, NSString *, NSError *))block orderId:(NSString *)orderId cancleReason:(NSString *)cancleReason
+{
+    NSString *path = [NSString stringWithFormat:@"%@%@",HX_HTTP_SERVER,API_Cancle_Order];
+    
+    NSDictionary *dataDic = @{@"o_id":orderId,@"o_cancel_reson":cancleReason};
+    
+    [XCBaseDataManage baseStartRequestWithPath:path parmDic:dataDic withBlock:^(NSString *retCode, NSString *retMessage, id responseObject, NSError *error) {
+        
+        if (error)
+        {
+            block(nil,retMessage,error);
+        }
+        else if ([retCode isEqualToString:HTTP_OK])
+        {
+            
+            
+            if (block)
+            {
+                block(retCode,retMessage,nil);
+            }
+            
+            
+        }
+        else
+        {
+            if (block)
+            {
+                block(retCode,retMessage,nil);
+            }
+            
+        }
+        
+    }];
+}
+
++(void)obtainOrderDetailithBlock:(void (^)(XCOrderDetailModel *, NSString *, NSString *, NSError *))block orderId:(NSString *)orderId
+{
+    NSString *path = [NSString stringWithFormat:@"%@%@",HX_HTTP_SERVER,API_Get_Order_detail];
+    
+    NSDictionary *dataDic = @{@"o_id":orderId};
+
+    
+    [XCBaseDataManage baseStartRequestWithPath:path parmDic:dataDic withBlock:^(NSString *retCode, NSString *retMessage, id responseObject, NSError *error) {
+        
+        if (error)
+        {
+            block(nil,retCode,retMessage,error);
+        }
+        else if ([retCode isEqualToString:HTTP_OK])
+        {
+            NSDictionary *dic = [responseObject  valueForKeyPath:HTTP_DATA];
+            
+            if (dic)
+            {
+                XCOrderDetailModel *model = [[XCOrderDetailModel alloc]init];
+                
+                model.o_id = [NSString stringWithoutNull:[dic objectForKey:@"o_id"]];
+                
+                
+                model.o_no = [NSString stringWithoutNull:[dic objectForKey:@"o_no"]];
+                
+                model.o_total_price = [NSString stringWithoutNull:[dic objectForKey:@"o_total_price"]];
+                
+                model.u_id = [NSString stringWithoutNull:[dic objectForKey:@"u_id"]];
+                
+                model.u_nickname = [NSString stringWithoutNull:[dic objectForKey:@"u_nickname"]];
+                
+                model.u_phone = [NSString stringWithoutNull:[dic objectForKey:@"u_phone"]];
+                
+                model.o_status = [NSString stringWithoutNull:[dic objectForKey:@"o_status"]];
+                
+                model.o_cu_et_add = [NSString stringWithoutNull:[dic objectForKey:@"o_cu_et_add"]];
+                
+                model.o_cu_ets_add = [NSString stringWithoutNull:[dic objectForKey:@"o_cu_ets_add"]];
+                
+                model.o_time = [NSString stringWithoutNull:[dic objectForKey:@"o_time"]];
+                
+                model.o_at_time = [NSString stringWithoutNull:[dic objectForKey:@"o_at_time"]];
+                
+                
+                model.o_as_time = [NSString stringWithoutNull:[dic objectForKey:@"o_as_time"]];
+                
+                model.o_finish_time = [NSString stringWithoutNull:[dic objectForKey:@"o_finish_time"]];
+                
+                NSArray *attrList = [dic objectForKey:@"attrList"];
+                
+                @autoreleasepool {
+                    for (NSDictionary * attrListDic in attrList)
+                    {
+                        XCOrderClothesModel *clothesModel = [[XCOrderClothesModel alloc]init];
+                        
+                        
+                        clothesModel.oa_id =[NSString stringWithoutNull:[attrListDic objectForKey:@"o_time"]];
+                        
+                        clothesModel.g_id =[NSString stringWithoutNull:[attrListDic objectForKey:@"g_id"]];
+                        
+                        clothesModel.g_name =[NSString stringWithoutNull:[attrListDic objectForKey:@"g_name"]];
+                        
+                        clothesModel.od_no =[NSString stringWithoutNull:[attrListDic objectForKey:@"od_no"]];
+                        
+                        clothesModel.o_id =[NSString stringWithoutNull:[attrListDic objectForKey:@"o_id"]];
+                        
+                        clothesModel.oa_price =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_price"]];
+                        
+                        clothesModel.g_old_price =[NSString stringWithoutNull:[attrListDic objectForKey:@"g_old_price"]];
+                        
+                        clothesModel.oa_brand =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_brand"]];
+                        
+                        clothesModel.oa_cloth =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_cloth"]];
+                        
+                        clothesModel.oa_color =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_color"]];
+                        
+                        clothesModel.oa_remark =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_remark"]];
+                        
+                        clothesModel.oa_defect =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_defect"]];
+                        
+                        clothesModel.oa_annex =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_annex"]];
+                        
+                        clothesModel.oa_send_scan =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_send_scan"]];
+                        
+                        clothesModel.oa_take_scan =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_take_scan"]];
+                        
+                        clothesModel.oa_status =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_status"]];
+                        
+                        clothesModel.oa_discount =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_discount"]];
+                        
+                        clothesModel.oa_reason =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_reason"]];
+                        
+                        clothesModel.oa_handel =[NSString stringWithoutNull:[attrListDic objectForKey:@"oa_handel"]];
+                        
+                        
+                        NSArray *photos = [attrListDic objectForKey:@"photos"];
+                        
+                        for (NSDictionary *photosDic in photos)
+                        {
+                            XCOrderClothesPhotoModel *photoModel = [[XCOrderClothesPhotoModel alloc]init];
+                            
+                            photoModel.dp_id = [NSString stringWithoutNull:[photosDic objectForKey:@"dp_id"]];
+                            
+                            photoModel.dp_imgurl = [NSString stringWithoutNull:[photosDic objectForKey:@"dp_imgurl"]];
+                            
+                            
+                            [clothesModel.photos addObject:photoModel];
+                            
+                        }
+                        
+                        
+                        [model.attrList addObject:clothesModel];
+
+                    }
+                }
+                
+                if (block)
+                {
+                    block(model,retCode,retMessage,nil);
+                }
+                
+                
+            }
+            else
+            {
+                if (block)
+                {
+                    block(nil,retCode,retMessage,nil);
+                }
+
+            }
+            
+            
+            
+        }
+        else
+        {
+            if (block)
+            {
+                block(nil,retCode,retMessage,nil);
+            }
+            
+        }
+        
+    }];
+
+}
+
+
++(void)addCommentToOrderWithBlock:(void (^)(NSString *, NSString *, NSError *))block uid:(NSString *)u_id oid:(NSString *)o_id ccontent:(NSString *)c_content cclevel:(NSString *)c_c_level cwlevel:(NSString *)c_w_level
+{
+    NSString *path = [NSString stringWithFormat:@"%@%@",HX_HTTP_SERVER,API_Comment_Order];
+    
+    NSDictionary *dataDic = @{@"u_id":u_id,@"o_id":o_id,@"c_content":c_content,@"c_c_level":c_c_level,@"c_w_level":c_w_level};
+    [XCBaseDataManage baseStartRequestWithPath:path parmDic:dataDic withBlock:^(NSString *retCode, NSString *retMessage, id responseObject, NSError *error) {
+        
+        if (error)
+        {
+            if (block)
+            {
+                block(nil,retMessage,error);
+            }
+        }
+        else
+        {
+            if (block)
+            {
+                block(retCode,retMessage,error);
+            }
+
+        }
+        
+        
+    }];
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

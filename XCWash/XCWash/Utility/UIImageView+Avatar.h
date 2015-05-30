@@ -19,8 +19,10 @@
  */
 -(void)setGoodsListGoodsAvatarWithGoodsId:(NSString *)goodsId headUrl:(NSString *)urlString withSize:(CGFloat)size update:(BOOL)update;
 
-
-
+/**
+ * 订单详情衣服图片
+ */
+-(void)setOrderDetailClothesAvatarWithPhotoId:(NSString *)photoId headUrl:(NSString *)urlString withSize:(CGFloat)size update:(BOOL)update;
 
 
 

@@ -209,7 +209,98 @@
 }
 
 
-
+-(void)setOrderDetailClothesAvatarWithPhotoId:(NSString *)photoId headUrl:(NSString *)urlString withSize:(CGFloat)size update:(BOOL)update
+{
+    __weak UIImageView *tempImgView = self;
+    
+    if (update)
+    {
+        if ([NSString isBlankString:urlString])
+        {
+            self.image = User_default_headImage;
+            return;
+        }
+        else
+        {
+            
+            NSString *imageThumbUrl = [NSString stringWithFormat:@"%@%@",API_Download_goods_img,urlString];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:imageThumbUrl]];
+            [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
+            [self setImageWithURLRequest:request placeholderImage:User_default_headImage
+                                 success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image)
+             {
+                 
+                 BOOL isExist = NO;
+                 NSString *iconPath = [DocumentUtil getDetailClothesAvatarByClothesPhotoId:photoId isExist:&isExist];
+                 if (isExist)
+                 {
+                     [Photo unloadImageForKey:iconPath];
+                     
+                 }
+                 
+                 [tempImgView setImage:image];
+                 
+                 
+                 if (![NSString isBlankString:photoId])
+                 {
+                     [DocumentUtil saveClothesAvatar:image withClothesPhotoId:photoId];
+                 }
+                 
+             } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error)
+             {
+                 [tempImgView setImage:User_default_headImage];
+             }];
+        }
+    }
+    else
+    {
+        BOOL isExist = NO;
+        NSString *iconPath = [DocumentUtil getDetailClothesAvatarByClothesPhotoId:photoId isExist:&isExist];
+        if (isExist)
+        {
+            self.image = [Photo loadImageThreadSafe:iconPath];
+        }
+        else
+        {
+            if ([NSString isBlankString:urlString])
+            {
+                self.image = User_default_headImage;
+                return;
+            }
+            else
+            {
+                
+                NSRange range = [urlString rangeOfString:API_Download_goods_img];
+                NSString *imageThumbUrl = [NSString stringWithFormat:@"%@%@",API_Download_goods_img,urlString];
+                if (range.location != NSNotFound) {
+                    imageThumbUrl = urlString;
+                }
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:imageThumbUrl]];
+                [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
+                
+                [self setImageWithURLRequest:request placeholderImage:User_default_headImage
+                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image)
+                 {
+                     
+                     //                     UIImage *tmpImage = [image circleImageWithSize:size];
+                     
+                     [tempImgView setImage:image];
+                     
+                     
+                     if (![NSString isBlankString:photoId])
+                     {
+                         [DocumentUtil saveClothesAvatar:image withClothesPhotoId:photoId];
+                     }
+                     
+                 } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error)
+                 {
+                     [tempImgView setImage:User_default_headImage];
+                 }];
+            }
+        }
+    }
+    
+}
 
 
 

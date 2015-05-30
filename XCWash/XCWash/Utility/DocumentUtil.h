@@ -21,6 +21,7 @@
 
 #define WASH_GOODS_FILE   @"Wash_goods_file"
 
+#define WASH_ORDER_DETAIL_FILE   @"Wash_order_detail_file"
 
 
 
@@ -70,6 +71,11 @@
 
 
 +(NSString *)getGoodsHeadAvatarByGoodsId:(NSString *)userId isExist:(BOOL *)isExist;
+
+
++(NSString *)saveClothesAvatar:(UIImage *)image withClothesPhotoId:(NSString *)photoId;
+
++(NSString *)getDetailClothesAvatarByClothesPhotoId:(NSString *)photoId isExist:(BOOL *)isExist;
 
 
 

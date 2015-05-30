@@ -11,6 +11,7 @@
 #import "XCDataManage.h"
 #import "HXAlertView.h"
 #import "DocumentUtil.h"
+#import "XCOrderDetailViewController.h"
 
 
 @interface XCMyOrderViewController ()<UITableViewDataSource,UITableViewDelegate,XCMyOrderTableViewCellDelegate,UIAlertViewDelegate,AVAudioPlayerDelegate>
@@ -221,6 +222,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+
+    
+    if (_dataArray && [_dataArray count]>0)
+    {
+        if (indexPath.section > [_dataArray count])
+        {
+            return;
+        }
+        
+        
+        XCOrderModel *model = [_dataArray objectAtIndex:indexPath.section];
+        
+        XCOrderDetailViewController *detailMVC = [[XCOrderDetailViewController alloc]initWithOrderId:model.orderId];
+        [self.navigationController pushViewController:detailMVC animated:YES];
+        
+        
+    }
+    
+    
 
 }
 
@@ -274,9 +295,50 @@
 {
     _clickOrderModel = model;
     
-    UIAlertView *cancleAlert = [[UIAlertView alloc]initWithTitle:@"提醒" message:@"确定要取消该订单?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    cancleAlert.tag = 500;
+    
+    HXAlertView *cancleAlert = [[HXAlertView alloc]initRemindInfoWithTitle:@"提醒" contentText:@"确定要取消该订单?"  leftBtnTitle:@"取消" rightBtnTitle:@"确定" haveCloseButton:NO];
     [cancleAlert show];
+    
+    
+    __weak XCMyOrderViewController *weakSelf = self;
+    __weak HXAlertView *weakAlert = cancleAlert;
+    cancleAlert.leftBlock = ^()
+    {
+        [weakAlert removeFromSuperview];
+    };
+    
+    cancleAlert.rightBlock = ^()
+    {
+        
+        //取消订单
+        [self initMBHudWithTitle:nil];
+        
+        [XCDataManage cancleOrderWithBlock:^(NSString *retcode, NSString *retMessage, NSError *error) {
+            
+            if ([retcode isEqualToString:HTTP_OK])
+            {
+                [self stopMBHudAndNSTimerWithmsg:@"取消订单成功" finsh:nil];
+                
+                [_dataArray removeObject:model];
+                
+                [_myOrderTableView reloadData];
+
+                
+                
+            }
+            else
+            {
+                [self stopMBHudAndNSTimerWithmsg:@"取消订单失败" finsh:nil];
+            }
+            
+            
+        } orderId:model.orderId cancleReason:@"取消订单"];
+        
+        
+        [weakAlert removeFromSuperview];
+        
+    };
+    
 
 }
 
@@ -378,6 +440,23 @@
     commentAlert.evaDoctorRightBlock = ^(NSInteger washEvaIntegerValue,NSInteger serviceEvaIntegerValue,NSString *evaMessage)
     {
         DDLogInfo(@"洗涤质量   %d   服务质量：%d    message = %@",washEvaIntegerValue,serviceEvaIntegerValue,evaMessage);
+        [self initMBHudWithTitle:nil];
+        
+        [XCDataManage addCommentToOrderWithBlock:^(NSString *retcode, NSString *retMessage, NSError *error) {
+            
+            if ([retcode isEqualToString:HTTP_OK])
+            {
+                [self stopMBHudAndNSTimerWithmsg:@"评价成功" finsh:nil];
+            }
+            else
+            {
+                [self stopMBHudAndNSTimerWithmsg:@"评价失败" finsh:nil];
+            }
+            
+            
+        } uid:[XCUserModel shareInstance].userId oid:model.orderId ccontent:evaMessage cclevel:[NSString stringWithFormat:@"%d",serviceEvaIntegerValue] cwlevel:[NSString stringWithFormat:@"%d",washEvaIntegerValue]];
+        
+        
         
         [weakAlert removeFromSuperview];
 
@@ -400,6 +479,10 @@
         else
         {
             //取消订单
+            
+            
+            
+            
         }
     }
 }

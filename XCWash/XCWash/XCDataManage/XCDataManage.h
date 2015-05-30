@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AFURLSessionManager.h"
+#import "XCOrderModel.h"
 
 
 @interface XCBaseDataManage : NSObject
@@ -131,8 +132,21 @@
 
 
 
+/**
+ * 取消订单
+ */
++(void)cancleOrderWithBlock:(void (^)(NSString *retcode,NSString *retMessage,NSError *error))block  orderId:(NSString *)orderId cancleReason:(NSString *)cancleReason;
+
+/**
+ * 订单详情
+ */
++(void)obtainOrderDetailithBlock:(void (^)(XCOrderDetailModel*detailModel,NSString *retcode,NSString *retMessage,NSError *error))block  orderId:(NSString *)orderId;
 
 
+/**
+ * 评论订单
+ */
++(void)addCommentToOrderWithBlock:(void (^)(NSString *retcode,NSString *retMessage,NSError *error))block  uid:(NSString *)u_id oid:(NSString *)o_id ccontent:(NSString *)c_content cclevel:(NSString *)c_c_level cwlevel:(NSString *)c_w_level;
 
 
 @end

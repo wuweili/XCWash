@@ -110,8 +110,12 @@
 
 #define API_Add_New_Order     @"wOrder/addWOrder"
 
+#define API_Cancle_Order     @"wOrder/cancelWOrder"
+
+#define API_Get_Order_detail     @"wOrder/getOrderDetail"
 
 
+#define API_Comment_Order     @"wOrder/addWComment"
 
 
 #define AccountLoginResult          @"AccountLoginResult"

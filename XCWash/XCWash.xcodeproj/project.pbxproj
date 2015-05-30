@@ -71,6 +71,9 @@
 		0259F9CF1ABF22B3006FAB12 /* addComment_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0259F9CB1ABF22B3006FAB12 /* addComment_image@3x.png */; };
 		0259F9D01ABF22B3006FAB12 /* order_listening_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0259F9CC1ABF22B3006FAB12 /* order_listening_image@2x.png */; };
 		0259F9D11ABF22B3006FAB12 /* order_listening_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0259F9CD1ABF22B3006FAB12 /* order_listening_image@3x.png */; };
+		0270DE591B19B96000288502 /* XCOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0270DE581B19B96000288502 /* XCOrderDetailViewController.m */; };
+		0270DE5C1B19CDE500288502 /* XCOrderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0270DE5B1B19CDE500288502 /* XCOrderDetailTableViewCell.m */; };
+		0270DE5F1B19D47C00288502 /* XCAllClothesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0270DE5E1B19D47C00288502 /* XCAllClothesView.m */; };
 		027C65151AB08BC200B5C58C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C65141AB08BC200B5C58C /* main.m */; };
 		027C65181AB08BC200B5C58C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C65171AB08BC200B5C58C /* AppDelegate.m */; };
 		027C651E1AB08BC200B5C58C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027C651C1AB08BC200B5C58C /* Main.storyboard */; };
@@ -274,6 +277,12 @@
 		0259F9CB1ABF22B3006FAB12 /* addComment_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addComment_image@3x.png"; sourceTree = "<group>"; };
 		0259F9CC1ABF22B3006FAB12 /* order_listening_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_listening_image@2x.png"; sourceTree = "<group>"; };
 		0259F9CD1ABF22B3006FAB12 /* order_listening_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_listening_image@3x.png"; sourceTree = "<group>"; };
+		0270DE571B19B96000288502 /* XCOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCOrderDetailViewController.h; sourceTree = "<group>"; };
+		0270DE581B19B96000288502 /* XCOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCOrderDetailViewController.m; sourceTree = "<group>"; };
+		0270DE5A1B19CDE500288502 /* XCOrderDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCOrderDetailTableViewCell.h; sourceTree = "<group>"; };
+		0270DE5B1B19CDE500288502 /* XCOrderDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCOrderDetailTableViewCell.m; sourceTree = "<group>"; };
+		0270DE5D1B19D47C00288502 /* XCAllClothesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCAllClothesView.h; sourceTree = "<group>"; };
+		0270DE5E1B19D47C00288502 /* XCAllClothesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCAllClothesView.m; sourceTree = "<group>"; };
 		027C650F1AB08BC200B5C58C /* XCWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027C65131AB08BC200B5C58C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		027C65141AB08BC200B5C58C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -692,6 +701,10 @@
 				024D1A181AD079960099F927 /* XCWashPriceTableViewCell.m */,
 				024D1A291AD169080099F927 /* XCMakeOrderTableViewCell.h */,
 				024D1A2A1AD169080099F927 /* XCMakeOrderTableViewCell.m */,
+				0270DE5A1B19CDE500288502 /* XCOrderDetailTableViewCell.h */,
+				0270DE5B1B19CDE500288502 /* XCOrderDetailTableViewCell.m */,
+				0270DE5D1B19D47C00288502 /* XCAllClothesView.h */,
+				0270DE5E1B19D47C00288502 /* XCAllClothesView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -962,6 +975,8 @@
 				024D1A271AD12F420099F927 /* XCMakeApplyOrderViewController.m */,
 				02CECC2C1AEE72FC00C5FF25 /* XCSerciveProvisionViewController.h */,
 				02CECC2D1AEE72FC00C5FF25 /* XCSerciveProvisionViewController.m */,
+				0270DE571B19B96000288502 /* XCOrderDetailViewController.h */,
+				0270DE581B19B96000288502 /* XCOrderDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1125,6 +1140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				024D1A211AD102080099F927 /* SVRootScrollView.m in Sources */,
+				0270DE591B19B96000288502 /* XCOrderDetailViewController.m in Sources */,
 				027C65A31AB09DC300B5C58C /* DDLog.m in Sources */,
 				02D8CB451AB8811A00AA22AA /* MMDrawerController.m in Sources */,
 				02EF87961AB9C8BA00F56FD8 /* XCServiceContentViewController.m in Sources */,
@@ -1132,6 +1148,7 @@
 				027C657B1AB09C9800B5C58C /* AFURLSessionManager.m in Sources */,
 				027C65761AB09C9800B5C58C /* AFNetworkReachabilityManager.m in Sources */,
 				02849D221ACC4BC7001DC00D /* UIView+SDExtension.m in Sources */,
+				0270DE5C1B19CDE500288502 /* XCOrderDetailTableViewCell.m in Sources */,
 				02849D1B1ACC4BC7001DC00D /* NSData+SDDataCache.m in Sources */,
 				02DF5A531AB0A6EA00DE3791 /* StringBuilder.m in Sources */,
 				027C65A81AB09DC300B5C58C /* Log.m in Sources */,
@@ -1202,6 +1219,7 @@
 				027C657A1AB09C9800B5C58C /* AFURLResponseSerialization.m in Sources */,
 				02D8CB441AB8811A00AA22AA /* MMDrawerBarButtonItem.m in Sources */,
 				024D1A1C1AD07D310099F927 /* XCWashPriceModel.m in Sources */,
+				0270DE5F1B19D47C00288502 /* XCAllClothesView.m in Sources */,
 				0251E3F71AC714CE00DD2DC7 /* XCMessageModel.m in Sources */,
 				0259F9C51ABF1660006FAB12 /* XCOrderModel.m in Sources */,
 				027C65C61AB09DE000B5C58C /* MBProgressHUD.m in Sources */,

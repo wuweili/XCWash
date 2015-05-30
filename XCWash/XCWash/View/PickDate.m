@@ -42,12 +42,12 @@
         
         [_submit setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:TITLE_COLOR,NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
         
-        UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame: CGRectMake(0, 0, 320, 44)];
+        UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame: CGRectMake(0, 0, kMainScreenWidth, 44)];
         [toolBar setBarStyle:UIBarStyleDefault];
         
         [toolBar setItems:[NSArray arrayWithObjects:_back,_space,_submit, nil]];
         
-        _datePicker = [[UIDatePicker alloc] initWithFrame: CGRectMake(0,44, 320, 216)];
+        _datePicker = [[UIDatePicker alloc] initWithFrame: CGRectMake(0,44, kMainScreenWidth, 216)];
         _datePicker.datePickerMode = UIDatePickerModeDateAndTime;
         _datePicker.minimumDate = [NSDate date];
         if (CurrentSystemVersion >= 7.0) {
