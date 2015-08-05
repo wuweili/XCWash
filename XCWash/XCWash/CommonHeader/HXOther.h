@@ -58,7 +58,7 @@
 
 
 
-#define MAX_LEFT_SIDE_WIDTH (IS_IPHONE5?270:310)
+#define MAX_LEFT_SIDE_WIDTH          (kMainScreenWidth/320)*270
 
 
 
