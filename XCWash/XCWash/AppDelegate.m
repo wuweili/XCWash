@@ -91,7 +91,7 @@
 - (void)initGlobalSettings
 {
     
-    [Log logOpen];
+//    [Log logOpen];
 
     
 }

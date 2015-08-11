@@ -103,7 +103,12 @@
     //如果没有授权则请求用户授权
     if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusNotDetermined)
     {
-        [_locationManage requestWhenInUseAuthorization];
+        if ([_locationManage respondsToSelector:@selector(requestWhenInUseAuthorization)])
+        {
+            [_locationManage requestWhenInUseAuthorization];
+        }
+        
+        
         
         _locationManage.delegate = self;
         _locationManage.desiredAccuracy = kCLLocationAccuracyBest;
@@ -120,14 +125,7 @@
         [_locationManage startUpdatingLocation];
 
     }
-    
-//    _locationManage.delegate = self;
-//    _locationManage.desiredAccuracy = kCLLocationAccuracyBest;
-//    _locationManage.distanceFilter = 10.0f;
-//    [_locationManage startUpdatingLocation];
-    
-    
-    
+   
 }
 
 -(void)initUI
