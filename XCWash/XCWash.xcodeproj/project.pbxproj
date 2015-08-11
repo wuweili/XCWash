@@ -123,6 +123,7 @@
 		02849D211ACC4BC7001DC00D /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02849D181ACC4BC7001DC00D /* SDCycleScrollView.m */; };
 		02849D221ACC4BC7001DC00D /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 02849D1A1ACC4BC7001DC00D /* UIView+SDExtension.m */; };
 		028739B41AD9174800C9F991 /* select_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 028739B31AD9174800C9F991 /* select_bg@2x.png */; };
+		02B39A821B42E9CC007FDD26 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B39A811B42E9CC007FDD26 /* libsqlite3.dylib */; };
 		02C599781AD42A02000618AC /* userDefaultHeadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 02C599771AD42A02000618AC /* userDefaultHeadImage.png */; };
 		02C944561AB72E350087C8A3 /* userDefaultHeadImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02C944541AB72E350087C8A3 /* userDefaultHeadImage@2x.png */; };
 		02C944571AB72E350087C8A3 /* userDefaultHeadImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02C944551AB72E350087C8A3 /* userDefaultHeadImage@3x.png */; };
@@ -381,6 +382,7 @@
 		02849D191ACC4BC7001DC00D /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		02849D1A1ACC4BC7001DC00D /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		028739B31AD9174800C9F991 /* select_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_bg@2x.png"; sourceTree = "<group>"; };
+		02B39A811B42E9CC007FDD26 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		02C599771AD42A02000618AC /* userDefaultHeadImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userDefaultHeadImage.png; sourceTree = "<group>"; };
 		02C944541AB72E350087C8A3 /* userDefaultHeadImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userDefaultHeadImage@2x.png"; sourceTree = "<group>"; };
 		02C944551AB72E350087C8A3 /* userDefaultHeadImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userDefaultHeadImage@3x.png"; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B39A821B42E9CC007FDD26 /* libsqlite3.dylib in Frameworks */,
 				024D1A471AD1C3BD0099F927 /* CoreLocation.framework in Frameworks */,
 				5AC5BDF61ACD467300463E3D /* AudioToolbox.framework in Frameworks */,
 				5AC5BDF41ACD465E00463E3D /* AVFoundation.framework in Frameworks */,
@@ -580,6 +583,7 @@
 		027C65061AB08BC200B5C58C = {
 			isa = PBXGroup;
 			children = (
+				02B39A811B42E9CC007FDD26 /* libsqlite3.dylib */,
 				027C65111AB08BC200B5C58C /* XCWash */,
 				027C652B1AB08BC300B5C58C /* XCWashTests */,
 				027C65101AB08BC200B5C58C /* Products */,
