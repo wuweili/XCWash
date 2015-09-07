@@ -79,10 +79,18 @@
     [self initUICollectionView];
     
     [self startLocation];
+    
 
+    [self getAd];
     
     
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
 }
 
 
@@ -209,9 +217,7 @@
 
 
 -(void)initScrollImageView
-{
-//    _imageScrollView =
-    
+{    
     _imageScrollView= [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 150) imageURLsGroup:_imageUrlArray];
     _imageScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     _imageScrollView.delegate = self;
@@ -802,6 +808,36 @@
     
 
 }
+#pragma mark - 广告位 
+
+-(void)getAd
+{
+    [XCDataManage getAdWithBlock:^(NSMutableArray *array, NSString *retcode, NSString *retMessage, NSError *error) {
+        
+        if ([retcode isEqualToString:HTTP_OK])
+        {
+            if (array && [array count]>0)
+            {
+                [_imageScrollView removeFromSuperview];
+                _imageScrollView=nil;
+                [_imageUrlArray removeAllObjects];
+                [_imageUrlArray addObjectsFromArray:array];
+                [self initScrollImageView];
+                
+                [_collectionView reloadData];
+                
+            }
+        }
+        else
+        {
+            
+        }
+        
+        
+    }];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

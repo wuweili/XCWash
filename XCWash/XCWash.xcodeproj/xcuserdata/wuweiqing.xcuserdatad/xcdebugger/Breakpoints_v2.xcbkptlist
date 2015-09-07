@@ -68,12 +68,12 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/Controller/XCLeftSideViewController.m"
-                  timestampString = "454691292.868057"
+                  timestampString = "463332246.616558"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "257"
                   endingLineNumber = "257"
-                  offsetFromSymbolStart = "842">
+                  offsetFromSymbolStart = "826">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -83,12 +83,12 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/Controller/XCLeftSideViewController.m"
-                  timestampString = "454691292.868276"
+                  timestampString = "463332246.617329"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "257"
                   endingLineNumber = "257"
-                  offsetFromSymbolStart = "117">
+                  offsetFromSymbolStart = "106">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCAddressManagerViewController.m"
-            timestampString = "450026283.90928"
+            timestampString = "463332168.009981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "-segmentValueChange:"
             landmarkType = "5">
          </BreakpointContent>
@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCAddressManagerViewController.m"
-            timestampString = "450026211.38945"
+            timestampString = "463332168.009981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "-addNewAddress"
             landmarkType = "5">
          </BreakpointContent>
@@ -260,12 +260,12 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "454691292.874177"
+                  timestampString = "463332246.6926"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
                   endingLineNumber = "842"
-                  offsetFromSymbolStart = "318">
+                  offsetFromSymbolStart = "313">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -275,12 +275,12 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "454691292.874589"
+                  timestampString = "463332246.692793"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
                   endingLineNumber = "842"
-                  offsetFromSymbolStart = "154">
+                  offsetFromSymbolStart = "133">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -308,12 +308,12 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "454691292.874776"
+                  timestampString = "463332246.693999"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
                   endingLineNumber = "842"
-                  offsetFromSymbolStart = "318">
+                  offsetFromSymbolStart = "313">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -323,12 +323,12 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "454691292.875155"
+                  timestampString = "463332246.694485"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
                   endingLineNumber = "842"
-                  offsetFromSymbolStart = "154">
+                  offsetFromSymbolStart = "133">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -379,22 +379,6 @@
                   offsetFromSymbolStart = "148">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XCWash/XCDataManage/XCDataManage.m"
-            timestampString = "451837218.980803"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "+baseStartRequestWithPath:parmDic:withBlock:"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -810,6 +794,38 @@
             startingLineNumber = "1048"
             endingLineNumber = "1048"
             landmarkName = "+makeOrderWithBlock:takeTime:takeAddress:sendAddress:voiceUrl:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XCWash/Controller/XCLeftSideViewController.m"
+            timestampString = "463326404.371514"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
+            landmarkName = "-clickVerifyButton"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XCWash/Controller/XCCenterFirstPageViewController.m"
+            timestampString = "463329890.83702"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "819"
+            endingLineNumber = "819"
+            landmarkName = "-getAd"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -114,6 +114,13 @@
 #define API_Comment_Order     @"wOrder/addWComment"
 
 
+#define API_Get_advlist     @"common/getAdvList"
+
+#define API_Delete_address     @"wUser/deleteAddress"
+
+
+
+
 #define AccountLoginResult          @"AccountLoginResult"
 
 #define LOGIN_SUCCESS_USER_ID          @"LOGIN_SUCCESS_USER_ID"
