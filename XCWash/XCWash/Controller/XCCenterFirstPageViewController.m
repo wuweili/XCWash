@@ -604,22 +604,13 @@
 -(void)clickAddYuyinWashButtonUp:(id)sender
 {
     hadFirstAddRecordView = NO;
-    
-    
     double cTime = _recorder.currentTime;
     if (cTime > 0.5)
     {
         //如果录制时间<2 不发送  跳转
-        
         XCMakeYuYinOrderViewController *makeYuyinMVC = [[XCMakeYuYinOrderViewController alloc]init];
         [self.navigationController pushViewController:makeYuyinMVC animated:YES];
-        
         [_recordBigBackGroundImageView removeFromSuperview];
-        
-        
-        
-        
-        
     }
     else
     {

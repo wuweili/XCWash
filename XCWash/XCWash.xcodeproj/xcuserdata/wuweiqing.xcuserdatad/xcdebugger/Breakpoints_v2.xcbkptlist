@@ -68,7 +68,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/Controller/XCLeftSideViewController.m"
-                  timestampString = "463332246.616558"
+                  timestampString = "463502517.452422"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "257"
@@ -83,7 +83,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/Controller/XCLeftSideViewController.m"
-                  timestampString = "463332246.617329"
+                  timestampString = "463502517.452627"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "257"
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/MMDrawerController/XCWashPriceDetailViewController.m"
-            timestampString = "450113598.774375"
+            timestampString = "463501949.578496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "423"
-            endingLineNumber = "423"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
             landmarkName = "-obtainGoodsTypeAndGoodsList"
             landmarkType = "5">
          </BreakpointContent>
@@ -212,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMakeApplyOrderViewController.m"
-            timestampString = "450118296.138751"
+            timestampString = "463501949.578496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "636"
-            endingLineNumber = "636"
+            startingLineNumber = "638"
+            endingLineNumber = "638"
             landmarkName = "-clickConfirmButton"
             landmarkType = "5">
          </BreakpointContent>
@@ -260,7 +260,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "463332246.6926"
+                  timestampString = "463502517.483536"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
@@ -275,7 +275,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "463332246.692793"
+                  timestampString = "463502517.483662"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
@@ -308,7 +308,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "463332246.693999"
+                  timestampString = "463502517.484343"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
@@ -323,7 +323,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "463332246.694485"
+                  timestampString = "463502517.484469"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
@@ -612,11 +612,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/MMDrawerController/XCWashPriceDetailViewController.m"
-            timestampString = "451841845.413247"
+            timestampString = "463501949.578496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "743"
-            endingLineNumber = "743"
+            startingLineNumber = "738"
+            endingLineNumber = "738"
             landmarkName = "-adjustTopScrollViewButtonWithScrollViewSelectedChannelID:"
             landmarkType = "5">
          </BreakpointContent>
@@ -628,11 +628,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/MMDrawerController/XCWashPriceDetailViewController.m"
-            timestampString = "451841576.464866"
+            timestampString = "463501949.578496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "720"
-            endingLineNumber = "720"
+            startingLineNumber = "715"
+            endingLineNumber = "715"
             landmarkName = "-clickTopButtonWithButtonTag:"
             landmarkType = "5">
          </BreakpointContent>
@@ -820,12 +820,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCCenterFirstPageViewController.m"
-            timestampString = "463329890.83702"
+            timestampString = "463500159.376101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "819"
-            endingLineNumber = "819"
+            startingLineNumber = "810"
+            endingLineNumber = "810"
             landmarkName = "-getAd"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XCWash/Controller/MMDrawerController/XCWashPriceDetailViewController.m"
+            timestampString = "463502264.969107"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
+            landmarkName = "-dealGoodsTypeArray"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XCWash/View/SVTopScrollView.m"
+            timestampString = "463502420.611942"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-initWithNameButtons"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
