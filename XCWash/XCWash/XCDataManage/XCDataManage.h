@@ -148,5 +148,15 @@
  */
 +(void)addCommentToOrderWithBlock:(void (^)(NSString *retcode,NSString *retMessage,NSError *error))block  uid:(NSString *)u_id oid:(NSString *)o_id ccontent:(NSString *)c_content cclevel:(NSString *)c_c_level cwlevel:(NSString *)c_w_level;
 
+/**
+ * 广告位
+ */
++(void)getAdWithBlock:(void (^)(NSMutableArray *array,NSString *retcode,NSString *retMessage,NSError *error))block;
+
+/**
+ * 删除地址
+ */
++(void)deleteAddressWithBlock:(void (^)(NSString *retcode,NSString *retMessage,NSError *error))block uaid:(NSString *)ua_id;
+
 
 @end

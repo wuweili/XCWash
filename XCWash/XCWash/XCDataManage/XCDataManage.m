@@ -1323,21 +1323,76 @@ static XCDataManage *av;
     
 }
 
++(void)getAdWithBlock:(void (^)(NSMutableArray *, NSString *, NSString *, NSError *))block
+{
+    NSString *path = [NSString stringWithFormat:@"%@%@",HX_HTTP_SERVER,API_Get_advlist];
+    
+    [XCBaseDataManage baseStartRequestWithPath:path parmDic:nil withBlock:^(NSString *retCode, NSString *retMessage, id responseObject, NSError *error) {
+        
+        if (error)
+        {
+            if (block)
+            {
+                block(nil,retCode,retMessage,error);
+            }
+        }
+        else
+        {
+            if ([retCode isEqualToString:HTTP_OK])
+            {
+                NSArray *retArray = [responseObject  valueForKeyPath:HTTP_DATA];
 
+                NSMutableArray *mutabArray = [NSMutableArray arrayWithCapacity:0];
+                @autoreleasepool {
+                    for (NSDictionary *dic in retArray)
+                    {
+                        NSString *url = [NSString stringWithoutNull:dic[@"img_url"]];
+                        if (![NSString isBlankString:url])
+                        {
+                            NSString *completeUrlStr = [NSString stringWithFormat:@"%@%@",HX_FILE_DOWN_SERVER,url];
+                            NSURL *completeUrl = [NSURL URLWithString:completeUrlStr];
+                            [mutabArray addObject:completeUrl];
+                        }
+                    }
+                    
+                }
+                
+                if (block)
+                {
+                    block([NSMutableArray arrayWithArray:mutabArray],retCode,retMessage,error);
+                }
+                
+                
+                
+            }
+            else
+            {
+                if (block)
+                {
+                    block(nil,retCode,retMessage,error);
+                }
+            }
+            
+        }
+    }];
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
++(void)deleteAddressWithBlock:(void (^)(NSString *, NSString *, NSError *))block uaid:(NSString *)ua_id
+{
+    NSString *path = [NSString stringWithFormat:@"%@%@",HX_HTTP_SERVER,API_Delete_address];
+    NSDictionary *dataDic = @{@"ua_id":ua_id};
+    [XCBaseDataManage baseStartRequestWithPath:path parmDic:dataDic withBlock:^(NSString *retCode, NSString *retMessage, id responseObject, NSError *error) {
+        
+        if (block)
+        {
+            block(retCode,retMessage,error);
+        }
+        
+        
+    }];
+    
+    
+}
 
 
 

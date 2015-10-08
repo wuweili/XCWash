@@ -83,7 +83,7 @@
         
         CGFloat buttonRealWidth = buttonWidth+BUTTONGAP;
         
-        if ([self.nameArray count] <= 3)
+        if ([self.nameArray count] <= 4)
         {
             buttonRealWidth = (kMainScreenWidth-BUTTONGAP*(2+[self.nameArray count]-1))/[self.nameArray count];
         }

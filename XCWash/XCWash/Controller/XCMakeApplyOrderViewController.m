@@ -174,6 +174,8 @@
     }
     else
     {
+        return 0;
+        
         if ([_dataArray count] == 0)
         {
             return  2;

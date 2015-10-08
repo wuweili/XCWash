@@ -43,10 +43,7 @@
     [self initTableView];
     
     [self obtainAddressDataWithAddressType:MyAddressType_recieve];
-    
-    
-    
-    
+   
 }
 
 
@@ -375,11 +372,26 @@
         if (indexPath.row < [_dataArray count])
         {
             
+            //调用删除接口
+            [self initMBHudWithTitle:nil];
             
-            [_dataArray removeObjectAtIndex:indexPath.row];
+            XCAddressModel *model = [_dataArray objectAtIndex:indexPath.row];
             
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-            
+            [XCDataManage deleteAddressWithBlock:^(NSString *retcode, NSString *retMessage, NSError *error) {
+                if ([retcode isEqualToString:HTTP_OK])
+                {
+                    [self stopMBHudAndNSTimerWithmsg:@"删除成功" finsh:^{
+                        [_dataArray removeObjectAtIndex:indexPath.row];
+                        
+                        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+                    }];
+                }
+                else
+                {
+                    [self stopMBHudAndNSTimerWithmsg:@"删除地址失败，请稍后重试" finsh:nil];
+                }
+            } uaid:model.ua_id];
+   
         }
     }
 }

@@ -410,12 +410,7 @@
                 [self initTopViewAndScrollView];
                 
                 [self obtainGoodsListWithClickTypeIndex:0];
-
-
             }
-            
-
-            
         }
         else
         {
