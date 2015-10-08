@@ -133,9 +133,6 @@ static NSString *const calusecontext = @"【重要须知】\n"
     [self.textView setEditable:NO];
     [self.view addSubview:self.textView];
     self.title = @"服务条款";
-
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
