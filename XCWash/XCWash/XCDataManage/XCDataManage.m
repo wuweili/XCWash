@@ -961,6 +961,8 @@ static XCDataManage *av;
                 
                 model.g_type = [NSString stringWithoutNull:[dic objectForKey:@"g_type"]];
                 
+                model.g_old_price = [NSString stringWithoutNull:[dic objectForKey:@"g_old_price"]];
+                
                 
                 [mutabArray addObject:model];
             }
@@ -1021,6 +1023,9 @@ static XCDataManage *av;
                 model.listenFileUrl = [NSString stringWithoutNull:[dic objectForKey:@"o_voice_url"]];
                 
                 model.o_status = [NSString stringWithoutNull:[dic objectForKey:@"o_status"]];
+                
+                model.o_words =[NSString stringWithoutNull:[dic objectForKey:@"o_words"]];
+                
                 [mutabArray addObject:model];
             }
             
@@ -1045,7 +1050,7 @@ static XCDataManage *av;
 
 }
 
-+(void)makeOrderWithBlock:(void (^)(NSMutableArray *, NSString *, NSString *, NSError *))block takeTime:(NSString *)takeTime takeAddress:(NSString *)takeAddress sendAddress:(NSString *)sendAddress voiceUrl:(NSString *)voiceUrl
++(void)makeOrderWithBlock:(void (^)(NSMutableArray *, NSString *, NSString *, NSError *))block takeTime:(NSString *)takeTime takeAddress:(NSString *)takeAddress sendAddress:(NSString *)sendAddress voiceUrl:(NSString *)voiceUrl words:(NSString *)words
 {
     
     NSString *path = [NSString stringWithFormat:@"%@%@",HX_HTTP_SERVER,API_Add_New_Order];
@@ -1057,7 +1062,15 @@ static XCDataManage *av;
     }
     else
     {
-        dataDic = @{@"u_id":[XCUserModel shareInstance].userId,@"o_cu_et_time":takeTime,@"o_cu_ets_add":sendAddress,@"o_cu_et_add":takeAddress,@"o_voice_url":@""};
+        if (![NSString isBlankString:words])
+        {
+            dataDic = @{@"u_id":[XCUserModel shareInstance].userId,@"o_cu_et_time":takeTime,@"o_cu_ets_add":sendAddress,@"o_cu_et_add":takeAddress,@"o_voice_url":@"",@"o_words":words};
+        }
+        else
+        {
+            dataDic = @{@"u_id":[XCUserModel shareInstance].userId,@"o_cu_et_time":takeTime,@"o_cu_ets_add":sendAddress,@"o_cu_et_add":takeAddress,@"o_voice_url":@"",@"o_words":@""};
+        }
+        
     }
     
     [XCBaseDataManage baseStartRequestWithPath:path parmDic:dataDic withBlock:^(NSString *retCode, NSString *retMessage, id responseObject, NSError *error) {

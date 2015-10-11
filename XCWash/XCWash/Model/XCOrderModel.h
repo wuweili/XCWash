@@ -29,6 +29,7 @@ typedef NS_ENUM(NSInteger, MyOrderStatus)
 @property(nonatomic,strong)NSString *sendAddress; //o_cu_ets_add
 @property(nonatomic,strong)NSString *listenFileUrl;//o_voice_url
 @property(nonatomic,strong)NSString *o_status;//o_voice_url
+@property(nonatomic,strong)NSString *o_words;
 //订单状态：0  新建
 //10 待确认
 //20 待取件

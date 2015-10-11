@@ -10,4 +10,6 @@
 
 @interface XCMakeApplyOrderViewController : XCBaseCenterViewController
 
+@property(nonatomic,strong)NSString *defaultAddress;
+
 @end

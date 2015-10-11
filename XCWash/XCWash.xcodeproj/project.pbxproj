@@ -74,6 +74,9 @@
 		0270DE591B19B96000288502 /* XCOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0270DE581B19B96000288502 /* XCOrderDetailViewController.m */; };
 		0270DE5C1B19CDE500288502 /* XCOrderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0270DE5B1B19CDE500288502 /* XCOrderDetailTableViewCell.m */; };
 		0270DE5F1B19D47C00288502 /* XCAllClothesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0270DE5E1B19D47C00288502 /* XCAllClothesView.m */; };
+		0279DFCD1BCA54EE00F125DB /* makeorder_voice_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0279DFCA1BCA54EE00F125DB /* makeorder_voice_1@2x.png */; };
+		0279DFCE1BCA54EE00F125DB /* makeorder_voice_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0279DFCB1BCA54EE00F125DB /* makeorder_voice_2@2x.png */; };
+		0279DFCF1BCA54EE00F125DB /* makeorder_voice_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0279DFCC1BCA54EE00F125DB /* makeorder_voice_3@2x.png */; };
 		027C65151AB08BC200B5C58C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C65141AB08BC200B5C58C /* main.m */; };
 		027C65181AB08BC200B5C58C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C65171AB08BC200B5C58C /* AppDelegate.m */; };
 		027C651E1AB08BC200B5C58C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027C651C1AB08BC200B5C58C /* Main.storyboard */; };
@@ -284,6 +287,9 @@
 		0270DE5B1B19CDE500288502 /* XCOrderDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCOrderDetailTableViewCell.m; sourceTree = "<group>"; };
 		0270DE5D1B19D47C00288502 /* XCAllClothesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCAllClothesView.h; sourceTree = "<group>"; };
 		0270DE5E1B19D47C00288502 /* XCAllClothesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCAllClothesView.m; sourceTree = "<group>"; };
+		0279DFCA1BCA54EE00F125DB /* makeorder_voice_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "makeorder_voice_1@2x.png"; sourceTree = "<group>"; };
+		0279DFCB1BCA54EE00F125DB /* makeorder_voice_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "makeorder_voice_2@2x.png"; sourceTree = "<group>"; };
+		0279DFCC1BCA54EE00F125DB /* makeorder_voice_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "makeorder_voice_3@2x.png"; sourceTree = "<group>"; };
 		027C650F1AB08BC200B5C58C /* XCWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027C65131AB08BC200B5C58C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		027C65141AB08BC200B5C58C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -523,6 +529,9 @@
 		024D16251AB1FEDE0006C1DC /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				0279DFCA1BCA54EE00F125DB /* makeorder_voice_1@2x.png */,
+				0279DFCB1BCA54EE00F125DB /* makeorder_voice_2@2x.png */,
+				0279DFCC1BCA54EE00F125DB /* makeorder_voice_3@2x.png */,
 				028739B31AD9174800C9F991 /* select_bg@2x.png */,
 				02C599771AD42A02000618AC /* userDefaultHeadImage.png */,
 				024D1A631AD2BBB50099F927 /* logout_btn_bg@2x.png */,
@@ -1034,6 +1043,7 @@
 				TargetAttributes = {
 					027C650E1AB08BC200B5C58C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = P3FBT6ACK5;
 					};
 					027C65271AB08BC300B5C58C = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -1068,6 +1078,7 @@
 			files = (
 				024D1A391AD16FEB0099F927 /* rightNavButton_bg@2x.png in Resources */,
 				028739B41AD9174800C9F991 /* select_bg@2x.png in Resources */,
+				0279DFCD1BCA54EE00F125DB /* makeorder_voice_1@2x.png in Resources */,
 				0259F9D01ABF22B3006FAB12 /* order_listening_image@2x.png in Resources */,
 				024D1A4F1AD2398B0099F927 /* hxAlertView_leftBtn_bg@2x.png in Resources */,
 				024D1A451AD1A53A0099F927 /* XCYuyin_first@3x.png in Resources */,
@@ -1076,6 +1087,7 @@
 				027C651E1AB08BC200B5C58C /* Main.storyboard in Resources */,
 				024D1A501AD2398B0099F927 /* hxAlertView_rightBtn_bg@2x.png in Resources */,
 				0259F9D11ABF22B3006FAB12 /* order_listening_image@3x.png in Resources */,
+				0279DFCF1BCA54EE00F125DB /* makeorder_voice_3@2x.png in Resources */,
 				02C944601AB7335C0087C8A3 /* messageCenter@2x.png in Resources */,
 				02C9445F1AB7335C0087C8A3 /* address_manager_image@2x.png in Resources */,
 				023DFF1F1AB5BBF300CB6E13 /* button_verify_orange@3x.png in Resources */,
@@ -1106,6 +1118,7 @@
 				0259F9BC1ABF10EA006FAB12 /* send_image@3x.png in Resources */,
 				02C944611AB7335C0087C8A3 /* myOrder@2x.png in Resources */,
 				024D1A431AD1A53A0099F927 /* XCListenYuyin@3x.png in Resources */,
+				0279DFCE1BCA54EE00F125DB /* makeorder_voice_2@2x.png in Resources */,
 				0259F9CF1ABF22B3006FAB12 /* addComment_image@3x.png in Resources */,
 				024D1A591AD268DE0099F927 /* star_empty@2x.png in Resources */,
 				024D1A511AD2398B0099F927 /* hxAlertView_single_rightBtn_bg@2x.png in Resources */,
@@ -1304,8 +1317,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1325,7 +1338,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "1d43a3a8-bde0-47ef-880f-ee431a764683";
+				PROVISIONING_PROFILE = "76cda707-1ca2-4c2d-b627-3db013572b29";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1352,8 +1365,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1366,7 +1379,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "1d43a3a8-bde0-47ef-880f-ee431a764683";
+				PROVISIONING_PROFILE = "76cda707-1ca2-4c2d-b627-3db013572b29";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1383,15 +1396,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
 				GCC_PREFIX_HEADER = XCWash/XCPrefixHeader.pch;
 				INFOPLIST_FILE = XCWash/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1d43a3a8-bde0-47ef-880f-ee431a764683";
+				PROVISIONING_PROFILE = "76cda707-1ca2-4c2d-b627-3db013572b29";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
@@ -1407,15 +1420,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
 				GCC_PREFIX_HEADER = XCWash/XCPrefixHeader.pch;
 				INFOPLIST_FILE = XCWash/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1d43a3a8-bde0-47ef-880f-ee431a764683";
+				PROVISIONING_PROFILE = "76cda707-1ca2-4c2d-b627-3db013572b29";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
@@ -1424,8 +1437,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1437,7 +1450,7 @@
 				INFOPLIST_FILE = XCWashTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1d43a3a8-bde0-47ef-880f-ee431a764683";
+				PROVISIONING_PROFILE = "76cda707-1ca2-4c2d-b627-3db013572b29";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XCWash.app/XCWash";
 			};
 			name = Debug;
@@ -1446,8 +1459,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Medpal Health Solution Co,ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiangsu Amiba Information Technology Co.,Ltd.";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1455,7 +1468,7 @@
 				INFOPLIST_FILE = XCWashTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1d43a3a8-bde0-47ef-880f-ee431a764683";
+				PROVISIONING_PROFILE = "76cda707-1ca2-4c2d-b627-3db013572b29";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XCWash.app/XCWash";
 			};
 			name = Release;

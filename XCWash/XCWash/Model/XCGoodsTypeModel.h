@@ -31,6 +31,7 @@
 @property(nonatomic,strong)NSString *g_sm;
 @property(nonatomic,strong)NSString *g_estimate_time;
 @property(nonatomic,strong)NSString *g_type;
+@property(nonatomic,strong)NSString *g_old_price;
 
 
 @end

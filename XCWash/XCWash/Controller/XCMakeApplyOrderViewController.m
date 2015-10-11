@@ -91,6 +91,20 @@
     _sendMessageStr = @"";
     _currentFirstRespondIndexPath = nil;
     
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSString *defaultRecieveAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultRecieveAddress"];
+    NSString *defaultSendAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultSendAddress"];
+    
+    if (![NSString isBlankString:defaultRecieveAddress])
+    {
+        _recieveAddressStr = defaultRecieveAddress;
+    }
+    
+    if (![NSString isBlankString:defaultSendAddress])
+    {
+        _sendAddressStr =defaultSendAddress;
+    }
+
     _dataArray = [NSMutableArray arrayWithCapacity:0];
     
     [[NSNotificationCenter defaultCenter]
@@ -245,7 +259,7 @@
     }
     else
     {
-        cellStr = _sendAddressStr;
+        cellStr = _sendMessageStr;
     }
     
     if (cell.cellTextField)
@@ -638,12 +652,13 @@
         if ([retcode isEqualToString:HTTP_OK])
         {
             [self stopMBHudAndNSTimerWithmsg:@"下单成功" finsh:^{
+                [[NSUserDefaults standardUserDefaults] setObject:_recieveAddressStr forKey:@"defaultRecieveAddress"];
+                [[NSUserDefaults standardUserDefaults] setObject:_sendAddressStr forKey:@"defaultSendAddress"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 [self.navigationController popViewControllerAnimated:YES];
 
             }];
-            
-
-            
+     
         }
         else
         {
@@ -652,7 +667,7 @@
         
         
         
-    } takeTime:_timeStr takeAddress:_recieveAddressStr sendAddress:_sendAddressStr voiceUrl:nil];
+    } takeTime:_timeStr takeAddress:_recieveAddressStr sendAddress:_sendAddressStr voiceUrl:nil words:_sendMessageStr];
 
     
     

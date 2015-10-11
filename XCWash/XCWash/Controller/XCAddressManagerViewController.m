@@ -90,7 +90,7 @@
 
 -(void)initTableView
 {
-    _addressTableView=[[UITableView alloc]initWithFrame:CGRectMake(0,_addAddressView.frame.origin.y+_addAddressView.frame.size.height,kMainScreenWidth ,kScreenHeightNoStatusAndNoNaviBarHeight) style:UITableViewStyleGrouped];
+    _addressTableView=[[UITableView alloc]initWithFrame:CGRectMake(0,_addAddressView.frame.origin.y+_addAddressView.frame.size.height,kMainScreenWidth ,kScreenHeightNoStatusAndNoNaviBarHeight-CGRectGetMaxY(_addAddressView.frame)) style:UITableViewStyleGrouped];
     _addressTableView.delegate=self;
     _addressTableView.dataSource=self;
     _addressTableView.showsVerticalScrollIndicator = NO;

@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMakeYuYinOrderViewController.m"
-            timestampString = "451840167.899836"
+            timestampString = "466263068.837785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "569"
-            endingLineNumber = "569"
+            startingLineNumber = "635"
+            endingLineNumber = "635"
             landmarkName = "-audioPlayerDidFinishPlaying:successfully:"
             landmarkType = "5">
          </BreakpointContent>
@@ -68,7 +68,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/Controller/XCLeftSideViewController.m"
-                  timestampString = "463502517.452422"
+                  timestampString = "466263069.305098"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "257"
@@ -83,7 +83,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/Controller/XCLeftSideViewController.m"
-                  timestampString = "463502517.452627"
+                  timestampString = "466263069.305364"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "257"
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/XCDataManage/XCDataManage.m"
-            timestampString = "454691292.262505"
+            timestampString = "466261653.746087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "976"
-            endingLineNumber = "976"
+            startingLineNumber = "978"
+            endingLineNumber = "978"
             landmarkName = "+obtainGoodsListWithBlock:goodsTypeId:"
             landmarkType = "5">
          </BreakpointContent>
@@ -212,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMakeApplyOrderViewController.m"
-            timestampString = "463501949.578496"
+            timestampString = "466262862.508965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "638"
-            endingLineNumber = "638"
+            startingLineNumber = "652"
+            endingLineNumber = "652"
             landmarkName = "-clickConfirmButton"
             landmarkType = "5">
          </BreakpointContent>
@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMakeYuYinOrderViewController.m"
-            timestampString = "451840167.899836"
+            timestampString = "466263068.837785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
+            startingLineNumber = "536"
+            endingLineNumber = "536"
             landmarkName = "-uploadOtherOrderInfoWithVoiceUrl:"
             landmarkType = "5">
          </BreakpointContent>
@@ -260,7 +260,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "463502517.483536"
+                  timestampString = "466263069.348451"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
@@ -275,7 +275,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "463502517.483662"
+                  timestampString = "466263069.348609"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
@@ -308,7 +308,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "463502517.484343"
+                  timestampString = "466263069.349641"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
@@ -323,7 +323,7 @@
                   moduleName = "XCWash"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuweiqing/XCWash/XCWash/XCWash/XCDataManage/XCDataManage.m"
-                  timestampString = "463502517.484469"
+                  timestampString = "466263069.349846"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "842"
@@ -340,12 +340,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/XCDataManage/XCDataManage.m"
-            timestampString = "454691292.262505"
+            timestampString = "466264385.125311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1061"
-            endingLineNumber = "1061"
-            landmarkName = "+makeOrderWithBlock:takeTime:takeAddress:sendAddress:voiceUrl:"
+            startingLineNumber = "1074"
+            endingLineNumber = "1074"
+            landmarkName = "+makeOrderWithBlock:takeTime:takeAddress:sendAddress:voiceUrl:words:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -404,11 +404,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMakeYuYinOrderViewController.m"
-            timestampString = "451840167.899836"
+            timestampString = "466263068.837785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "-textFieldDidEndEditing:"
             landmarkType = "5">
          </BreakpointContent>
@@ -420,11 +420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMakeYuYinOrderViewController.m"
-            timestampString = "451840167.899836"
+            timestampString = "466263068.837785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "-textFieldDidEndEditing:"
             landmarkType = "5">
          </BreakpointContent>
@@ -436,11 +436,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMakeYuYinOrderViewController.m"
-            timestampString = "451840167.899836"
+            timestampString = "466263068.837785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "460"
-            endingLineNumber = "460"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
             landmarkName = "-clickConfirmButton"
             landmarkType = "5">
          </BreakpointContent>
@@ -452,11 +452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMakeYuYinOrderViewController.m"
-            timestampString = "451840167.899836"
+            timestampString = "466263068.837785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "-textFieldDidEndEditing:"
             landmarkType = "5">
          </BreakpointContent>
@@ -516,12 +516,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMyOrderViewController.m"
-            timestampString = "454690232.125395"
+            timestampString = "466240873.322202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
-            landmarkName = "-clickListenYuyinButtonWithOrderModel:"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
+            landmarkName = "-clickListenYuyinButtonWithOrderModel:clickButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -644,11 +644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/XCDataManage/XCDataManage.m"
-            timestampString = "454691292.262505"
+            timestampString = "466264385.125311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1120"
-            endingLineNumber = "1120"
+            startingLineNumber = "1133"
+            endingLineNumber = "1133"
             landmarkName = "+cancleOrderWithBlock:orderId:cancleReason:"
             landmarkType = "5">
          </BreakpointContent>
@@ -708,12 +708,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMyOrderViewController.m"
-            timestampString = "454690740.751516"
+            timestampString = "466240873.322202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
-            landmarkName = "-clickListenYuyinButtonWithOrderModel:"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
+            landmarkName = "-clickListenYuyinButtonWithOrderModel:clickButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -724,12 +724,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMyOrderViewController.m"
-            timestampString = "454690748.497008"
+            timestampString = "466240873.322202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
-            landmarkName = "-clickListenYuyinButtonWithOrderModel:"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
+            landmarkName = "-clickListenYuyinButtonWithOrderModel:clickButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -755,29 +755,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XCWash/XCDataManage/XCDataManage.m"
-            timestampString = "454691292.262505"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1007"
-            endingLineNumber = "1007"
-            landmarkName = "+obtainMyOrderListWithBlock:orderType:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "XCWash/Controller/XCMyOrderViewController.m"
-            timestampString = "454690937.842595"
+            timestampString = "466240873.322202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
-            landmarkName = "-clickListenYuyinButtonWithOrderModel:"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
+            landmarkName = "-clickListenYuyinButtonWithOrderModel:clickButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -788,12 +772,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XCWash/XCDataManage/XCDataManage.m"
-            timestampString = "454691292.262505"
+            timestampString = "466264385.125311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1048"
-            endingLineNumber = "1048"
-            landmarkName = "+makeOrderWithBlock:takeTime:takeAddress:sendAddress:voiceUrl:"
+            startingLineNumber = "1053"
+            endingLineNumber = "1053"
+            landmarkName = "+makeOrderWithBlock:takeTime:takeAddress:sendAddress:voiceUrl:words:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -810,54 +794,6 @@
             startingLineNumber = "259"
             endingLineNumber = "259"
             landmarkName = "-clickVerifyButton"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XCWash/Controller/XCCenterFirstPageViewController.m"
-            timestampString = "463500159.376101"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "810"
-            endingLineNumber = "810"
-            landmarkName = "-getAd"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XCWash/Controller/MMDrawerController/XCWashPriceDetailViewController.m"
-            timestampString = "463502264.969107"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "429"
-            endingLineNumber = "429"
-            landmarkName = "-dealGoodsTypeArray"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XCWash/View/SVTopScrollView.m"
-            timestampString = "463502420.611942"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-initWithNameButtons"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

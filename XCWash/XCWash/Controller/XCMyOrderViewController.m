@@ -28,6 +28,8 @@
     
     XCOrderModel *_clickOrderModel;
     
+    UIButton *_clickListenButton;
+    
 }
 
 @end
@@ -342,9 +344,12 @@
 
 }
 
--(void)clickListenYuyinButtonWithOrderModel:(XCOrderModel *)model
+-(void)clickListenYuyinButtonWithOrderModel:(XCOrderModel *)model clickButton:(UIButton *)clickButton
 {
+    _clickListenButton.selected = NO;
     _clickOrderModel = model;
+    
+    _clickListenButton =clickButton;
     
     BOOL isExit;
     NSString *recordFileUrlStr = [DocumentUtil getRecordFileByRecordFileId:model.orderId isExist:&isExit];
@@ -360,6 +365,8 @@
             [self.avPlay stop];
             return;
         }
+        
+        _clickListenButton.selected = YES;
 
         AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:recordFileUrlStr] error:nil];
         self.avPlay = player;
@@ -388,6 +395,8 @@
                     return;
                 }
                 
+                _clickListenButton.selected = YES;
+                
                 AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL:filePath error:nil];
                 self.avPlay = player;
                 self.avPlay.delegate = self;
@@ -398,11 +407,7 @@
         }];
 
     }
-    
-    
-    
-    
-   
+  
 }
 
 #pragma mark - AVAudioPlayerDelegate -
@@ -410,6 +415,14 @@
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     DDLogInfo(@"播放完成");
+    
+    _clickListenButton.selected = NO;
+}
+
+- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error;
+{
+    _clickListenButton.selected = NO;
+
 }
 
 

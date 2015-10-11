@@ -25,9 +25,14 @@
     UITableView *_tableView;
     
     NSIndexPath *_currentFirstRespondIndexPath;
-
-
     
+    UIButton *_playRecordButton;
+    
+    NSTimer *_playTimer;
+
+    NSInteger playImageIndex;
+    
+    NSMutableArray *_playImageArray;
 }
 
 @end
@@ -43,6 +48,11 @@
     
     [self initData];
     
+    
+}
+
+-(void)dealloc
+{
     
 }
 
@@ -66,29 +76,47 @@
 //    _recordHeadView.alpha = 0.5;
 
     
-    UIButton *playRecordButton = [[UIButton alloc]initWithFrame:CGRectMake((kMainScreenWidth-175)/2, 0, 175, 175)];
-    playRecordButton.layer.cornerRadius = 4;
-    [playRecordButton setBackgroundImage:XC_XCYuyin_Listen_image forState:UIControlStateNormal];
-    [playRecordButton setBackgroundColor:[UIColor clearColor]];
+    _playRecordButton = [[UIButton alloc]initWithFrame:CGRectMake((kMainScreenWidth-175)/2, 0, 175, 175)];
+    _playRecordButton.layer.cornerRadius = 4;
+    [_playRecordButton setBackgroundImage:XC_XCYuyin_Listen_image forState:UIControlStateNormal];
+    [_playRecordButton setBackgroundColor:[UIColor clearColor]];
     
-    [playRecordButton addTarget:self action:@selector(clickPlayRecordButton) forControlEvents:UIControlEventTouchUpInside];
-    [_recordHeadView addSubview:playRecordButton];
+    [_playRecordButton addTarget:self action:@selector(clickPlayRecordButton) forControlEvents:UIControlEventTouchUpInside];
+    [_recordHeadView addSubview:_playRecordButton];
     
     
-    UIButton *deleteBtn = [[UIButton alloc]initWithFrame:CGRectMake(playRecordButton.frame.size.width-31, 0, 31, 31)];
+    UIButton *deleteBtn = [[UIButton alloc]initWithFrame:CGRectMake(_playRecordButton.frame.size.width-31, 0, 31, 31)];
     deleteBtn.layer.cornerRadius = deleteBtn.frame.size.width/2;
     [deleteBtn setBackgroundColor:[UIColor clearColor]];
     [deleteBtn addTarget:self action:@selector(clickDeleteButton) forControlEvents:UIControlEventTouchUpInside];
-    [playRecordButton addSubview:deleteBtn];
-    
-    
-    
+    [_playRecordButton addSubview:deleteBtn];
+   
 }
 
 -(void)initData
 {
     _recieveAddressStr = @"";
     _sendAddressStr = @"";
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSString *defaultRecieveAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultRecieveAddress"];
+    NSString *defaultSendAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultSendAddress"];
+    
+    if (![NSString isBlankString:defaultRecieveAddress])
+    {
+        _recieveAddressStr = defaultRecieveAddress;
+    }
+    
+    if (![NSString isBlankString:defaultSendAddress])
+    {
+        _sendAddressStr =defaultSendAddress;
+    }
+    
+    
+    playImageIndex = 0;
+    
+    _playImageArray = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"makeorder_voice_1"],[UIImage imageNamed:@"makeorder_voice_2"],[UIImage imageNamed:@"makeorder_voice_3"], nil];
+    
     
     
     [[NSNotificationCenter defaultCenter]
@@ -508,6 +536,11 @@
         if ([retcode isEqualToString:HTTP_OK])
         {
             [self stopMBHudAndNSTimerWithmsg:@"下单成功" finsh:^{
+                
+                [[NSUserDefaults standardUserDefaults] setObject:_recieveAddressStr forKey:@"defaultRecieveAddress"];
+                [[NSUserDefaults standardUserDefaults] setObject:_sendAddressStr forKey:@"defaultSendAddress"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                
                 [self.navigationController popViewControllerAnimated:YES];
                 
             }];
@@ -523,7 +556,7 @@
         
         
         
-    } takeTime:[DateFormate getCurrentDateToString] takeAddress:_recieveAddressStr sendAddress:_sendAddressStr voiceUrl:voiceUrl];
+    } takeTime:[DateFormate getCurrentDateToString] takeAddress:_recieveAddressStr sendAddress:_sendAddressStr voiceUrl:voiceUrl words:nil];
     
     
 }
@@ -540,11 +573,26 @@
     [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
     [audioSession setActive:YES error:nil];
 
+    if (_playTimer)
+    {
+        [_playTimer invalidate];
+        _playTimer = nil;
+    }
     
-    if (self.avPlay.playing) {
+    if (self.avPlay.playing)
+    {
         [self.avPlay stop];
+        [_playRecordButton setBackgroundImage:XC_XCYuyin_Listen_image forState:UIControlStateNormal];        
+        
         return;
     }
+    
+    _playTimer =  [NSTimer scheduledTimerWithTimeInterval: 0.35
+                                                        target: self
+                                                      selector: @selector(playRecord)
+                                                      userInfo: nil
+                                                       repeats: YES];
+    
     
     BOOL isExit;
     NSString *recordFileUrlStr = [DocumentUtil getRecordFileByRecordFileId:[XCUserModel shareInstance].userId isExist:&isExit];
@@ -564,16 +612,48 @@
     [self.avPlay play];
 }
 
+-(void)playRecord
+{
+    NSInteger i = playImageIndex%3;
+    
+    playImageIndex++;
+    
+    DDLogInfo(@"当前播放录音文件  i = %ld",(long)i );
+    
+    if (i<[_playImageArray count])
+    {
+        UIImage *image = [_playImageArray objectAtIndex:i];
+        [_playRecordButton setBackgroundImage:image forState:UIControlStateNormal];
+    }
+    
+    
+}
+
+
 #pragma mark - AVAudioPlayerDelegate - 
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     NSLog(@"播放完成");
+    if (_playTimer)
+    {
+        [_playTimer invalidate];
+        _playTimer = nil;
+    }
+    
+    [_playRecordButton setBackgroundImage:XC_XCYuyin_Listen_image forState:UIControlStateNormal];
 }
 
 - (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error
 {
     NSLog(@"播放失败   = %@",error);
+    if (_playTimer)
+    {
+        [_playTimer invalidate];
+        _playTimer = nil;
+    }
+    
+    [_playRecordButton setBackgroundImage:XC_XCYuyin_Listen_image forState:UIControlStateNormal];
 
 }
 

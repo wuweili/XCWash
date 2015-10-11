@@ -16,7 +16,7 @@
 @property(nonatomic,strong)UILabel *nameLabel;
 @property(nonatomic,strong)UILabel *priceLabel;
 @property(nonatomic,strong)UILabel *otherDescLabel;
-
+@property(nonatomic,strong)UILabel *oldPriceLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 

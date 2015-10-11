@@ -31,11 +31,19 @@
         _nameLabel.font = HEL_14;
         [self.contentView addSubview:_nameLabel];
         
-        _priceLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headImageView.frame)+10, CGRectGetMaxY(_nameLabel.frame), 440/2, 30)];
+        _priceLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headImageView.frame)+10, CGRectGetMaxY(_nameLabel.frame), kMainScreenWidth-(CGRectGetMaxX(_headImageView.frame)+10-10-100), 30)];
         _priceLabel.textColor = UIColorFromRGB(0xfb3535);
         _priceLabel.font = HEL_18;
         _priceLabel.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:_priceLabel];
+        
+        _oldPriceLabel = [[UILabel alloc]initWithFrame:CGRectMake(kMainScreenWidth-10-100, CGRectGetMaxY(_nameLabel.frame), 100, 30)];
+        _oldPriceLabel.textColor = UIColorFromRGB(0xfb3535);
+        _oldPriceLabel.font = HEL_16;
+        _oldPriceLabel.textAlignment = NSTextAlignmentLeft;
+        _oldPriceLabel.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:_oldPriceLabel];
+        
         
         _otherDescLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headImageView.frame)+10, CGRectGetMaxY(_priceLabel.frame), 440/2, 20)];
         _otherDescLabel.textColor = UIColorFromRGB(0x7b7b7b);
@@ -60,6 +68,7 @@
         _nameLabel.text = model.g_name;
         
         _priceLabel.text = [NSString stringWithFormat:@"￥ %@",model.g_price];
+        _oldPriceLabel.text =[NSString stringWithFormat:@"原价 %@",model.g_old_price];
         _otherDescLabel.text = [NSString stringWithFormat:@"说明：%@",model.g_sm];
         
         

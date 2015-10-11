@@ -127,7 +127,7 @@
  * 用户下单
  */
 
-+(void)makeOrderWithBlock:(void (^)(NSMutableArray *messageArray,NSString *retcode,NSString *retMessage,NSError *error))block  takeTime:(NSString *)takeTime takeAddress:(NSString *)takeAddress sendAddress:(NSString *)sendAddress voiceUrl:(NSString *)voiceUrl;
++(void)makeOrderWithBlock:(void (^)(NSMutableArray *messageArray,NSString *retcode,NSString *retMessage,NSError *error))block  takeTime:(NSString *)takeTime takeAddress:(NSString *)takeAddress sendAddress:(NSString *)sendAddress voiceUrl:(NSString *)voiceUrl words:(NSString *)words;
 
 
 

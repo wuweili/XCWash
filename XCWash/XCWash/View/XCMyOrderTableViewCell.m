@@ -83,9 +83,21 @@
             
             _listenButton = [[UIButton alloc]initWithFrame:CGRectMake(10, line3.frame.origin.y+line3.frame.size.height+11, 134, 23)];
             [_listenButton setImage:Listen_image forState:UIControlStateNormal];
+            
+            [_listenButton setImage:Order_listening_image forState:UIControlStateSelected];
+            
             [_listenButton addTarget:self action:@selector(clickListenButton:) forControlEvents:UIControlEventTouchUpInside];
             [_orderView addSubview:_listenButton];
             
+            
+            _sendMessageLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, line3.frame.origin.y+line3.frame.size.height, _orderView.frame.size.width - 10  - 5, 44)];
+            _sendMessageLabel.numberOfLines = 0;
+            _sendMessageLabel.font = HEL_14;
+            _sendMessageLabel.backgroundColor = [UIColor clearColor];
+            _sendMessageLabel.textAlignment = NSTextAlignmentLeft;
+            _sendMessageLabel.textColor = UIColorFromRGB(0x666666);
+            _sendMessageLabel.hidden = YES;
+            [_orderView addSubview:_sendMessageLabel];
             
             [self.contentView addSubview:_orderView];
   
@@ -153,8 +165,20 @@
             
             _listenButton = [[UIButton alloc]initWithFrame:CGRectMake(10, line3.frame.origin.y+line3.frame.size.height+11, 134, 23)];
             [_listenButton setImage:Listen_image forState:UIControlStateNormal];
+            [_listenButton setImage:Order_listening_image forState:UIControlStateSelected];
             [_listenButton addTarget:self action:@selector(clickListenButton:) forControlEvents:UIControlEventTouchUpInside];
             [_orderView addSubview:_listenButton];
+            
+            
+            _sendMessageLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, line3.frame.origin.y+line3.frame.size.height, _orderView.frame.size.width - 10  - 5, 44)];
+            _sendMessageLabel.numberOfLines = 0;
+            _sendMessageLabel.font = HEL_14;
+            _sendMessageLabel.backgroundColor = [UIColor clearColor];
+            _sendMessageLabel.textAlignment = NSTextAlignmentLeft;
+            _sendMessageLabel.textColor = UIColorFromRGB(0x666666);
+            _sendMessageLabel.hidden = YES;
+            [_orderView addSubview:_sendMessageLabel];
+            
             
             
             [self.contentView addSubview:_orderView];
@@ -222,6 +246,7 @@
             _listenButton = [[UIButton alloc]initWithFrame:CGRectMake(10, line3.frame.origin.y+line3.frame.size.height+11, 134, 23)];
             [_listenButton setImage:Listen_image forState:UIControlStateNormal];
             [_listenButton addTarget:self action:@selector(clickListenButton:) forControlEvents:UIControlEventTouchUpInside];
+            [_listenButton setImage:Order_listening_image forState:UIControlStateSelected];
             [_orderView addSubview:_listenButton];
             
             _addCommentButton = [[UIButton alloc]initWithFrame:CGRectMake(_listenButton.frame.origin.x + _listenButton.frame.size.width +11, line3.frame.origin.y+line3.frame.size.height+11, 134, 23)];
@@ -241,6 +266,34 @@
 -(void)setCellContentWithOrderModel:(XCOrderModel *)model cellType:(MyOrderCellType)type
 {
     self.model = model;
+    
+    if ([NSString isBlankString:model.listenFileUrl])
+    {
+        _listenButton.enabled = NO;
+        _listenButton.hidden = YES;
+        _sendMessageLabel.hidden = NO;
+        
+        if ([NSString isBlankString:model.o_words])
+        {
+            _sendMessageLabel.text = [NSString stringWithFormat:@"给服务员的话：没有给服务员的话哟"];
+        }
+        else
+        {
+            _sendMessageLabel.text = [NSString stringWithFormat:@"给服务员的话：%@",model.o_words];
+        }
+        
+        
+        
+        
+    }
+    else
+    {
+        _listenButton.enabled = YES;
+        _listenButton.hidden = NO;
+        _sendMessageLabel.hidden=YES;
+
+    }
+    
     
     if (type == MyOrderCellType_YuYueZhong)
     {
@@ -278,8 +331,8 @@
 
 -(void)clickListenButton:(UIButton *)sender
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(clickListenYuyinButtonWithOrderModel:)]) {
-        [_delegate clickListenYuyinButtonWithOrderModel:self.model];
+    if (_delegate && [_delegate respondsToSelector:@selector(clickListenYuyinButtonWithOrderModel:clickButton:)]) {
+        [_delegate clickListenYuyinButtonWithOrderModel:self.model clickButton:sender];
     }
 }
 

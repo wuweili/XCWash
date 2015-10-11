@@ -751,6 +751,8 @@
     
     
     XCMakeApplyOrderViewController *makeOrderMVC = [[XCMakeApplyOrderViewController alloc]init];
+    
+    
     [self.navigationController pushViewController:makeOrderMVC animated:YES];
 }
 
@@ -785,10 +787,19 @@
 //            SubThoroughfare = "34\U53f7";//具体地址
 //            Thoroughfare = "\U9ad8\U65b0\U516d\U8def";//街道名称
             
-            
             NSString *address = [NSString stringWithFormat:@"%@",[test objectForKey:@"Name"]];
             
             _locationAddress =address;
+            
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            NSString *defaultRecieveAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultRecieveAddress"];
+            NSString *defaultSendAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultSendAddress"];
+            if ([NSString isBlankString:defaultRecieveAddress] && ![NSString isBlankString:_locationAddress])
+            {
+                [[NSUserDefaults standardUserDefaults] setObject:_locationAddress forKey:@"defaultRecieveAddress"];
+                [[NSUserDefaults standardUserDefaults] setObject:_locationAddress forKey:@"defaultSendAddress"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+            }   
         }
 
 

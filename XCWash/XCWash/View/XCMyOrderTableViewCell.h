@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, MyOrderCellType)
 
 -(void)clickCancleOrderButtonWithOrderModel:(XCOrderModel *)model;
 
--(void)clickListenYuyinButtonWithOrderModel:(XCOrderModel *)model;
+-(void)clickListenYuyinButtonWithOrderModel:(XCOrderModel *)model clickButton:(UIButton *)clickButton;
 
 -(void)clickAddCommentButtonWithOrderModel:(XCOrderModel *)model;
 
@@ -42,6 +42,7 @@ typedef NS_ENUM(NSInteger, MyOrderCellType)
 @property(nonatomic,strong)UILabel *sendAddressLabel;
 @property(nonatomic,strong)UIButton*listenButton;
 @property(nonatomic,strong)UIButton*addCommentButton;
+@property(nonatomic,strong)UILabel *sendMessageLabel;
 
 @property(nonatomic,assign)MyOrderCellType myOrderType;
 

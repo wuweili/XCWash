@@ -22,6 +22,7 @@
         _sendAddress = @"";
         _listenFileUrl = @"";
         _orderStatus = MyOrderStatus_normal;
+        _o_words = @"";
         
     }
     
