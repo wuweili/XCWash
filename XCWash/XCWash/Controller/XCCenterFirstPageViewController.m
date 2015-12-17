@@ -57,6 +57,7 @@
 
 
     
+    BOOL hadObtainAd;
    
 }
 
@@ -79,17 +80,18 @@
     [self initUICollectionView];
     
     [self startLocation];
-    
 
-    [self getAd];
-    
-    
     // Do any additional setup after loading the view.
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    if (!hadObtainAd)
+    {
+        [self getAd];
+    }
     
 }
 
@@ -192,6 +194,8 @@
     _locationAddress = @"正在定位";
     
     hadFirstAddRecordView = NO;
+    
+    hadObtainAd = NO;
     
     [_section1Array addObjectsFromArray:@[
                                           XCCenterPage_yiwu,
@@ -818,6 +822,8 @@
         
         if ([retcode isEqualToString:HTTP_OK])
         {
+            hadObtainAd = YES;
+            
             if (array && [array count]>0)
             {
                 [_imageScrollView removeFromSuperview];
